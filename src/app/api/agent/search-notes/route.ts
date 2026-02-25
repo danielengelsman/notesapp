@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
 
 export async function POST(req: Request) {
   const secret = req.headers.get('x-elevenlabs-signature');
@@ -6,18 +6,19 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { query } = await req.json();
+  const { query, user_id } = await req.json();
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!user_id) {
+    return Response.json({ error: 'Missing user_id' }, { status: 400 });
   }
+
+  const supabase = createAdminClient();
 
   // Search by title (content is encrypted, so we can only search titles server-side)
   const { data: notes, error } = await supabase
     .from('notes')
     .select('id, title, folder, created_at')
+    .eq('user_id', user_id)
     .ilike('title', `%${query}%`)
     .order('updated_at', { ascending: false })
     .limit(5);

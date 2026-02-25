@@ -5,9 +5,10 @@ import { useConversation } from '@elevenlabs/react';
 interface VoiceAgentProps {
   isOpen: boolean;
   onClose: () => void;
+  userId?: string;
 }
 
-export function VoiceAgent({ isOpen, onClose }: VoiceAgentProps) {
+export function VoiceAgent({ isOpen, onClose, userId }: VoiceAgentProps) {
   const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
 
   const conversation = useConversation({
@@ -25,7 +26,11 @@ export function VoiceAgent({ isOpen, onClose }: VoiceAgentProps) {
 
     try {
       await navigator.mediaDevices.getUserMedia({ audio: true });
-      await conversation.startSession({ agentId, connectionType: 'webrtc' });
+      await conversation.startSession({
+        agentId,
+        connectionType: 'webrtc',
+        dynamicVariables: userId ? { user_id: userId } : undefined,
+      });
     } catch (err) {
       console.error('Failed to start voice session:', err);
     }

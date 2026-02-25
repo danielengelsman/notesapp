@@ -34,6 +34,11 @@ export function useNotes() {
       const decrypted = await Promise.all(
         (data as Note[]).map(async (note) => {
           try {
+            // Voice notes are stored as plaintext with a sentinel IV
+            if (note.content_iv === '__voice__') {
+              const { content_encrypted, content_iv, ...rest } = note;
+              return { ...rest, content: content_encrypted } as DecryptedNote;
+            }
             const content = await decryptContent(
               note.content_encrypted,
               note.content_iv,
@@ -151,6 +156,11 @@ export function useNotes() {
     if (fetchError) return null;
 
     const note = data as Note;
+    // Voice notes are stored as plaintext with a sentinel IV
+    if (note.content_iv === '__voice__') {
+      const { content_encrypted, content_iv, ...rest } = note;
+      return { ...rest, content: content_encrypted };
+    }
     const content = await decryptContent(note.content_encrypted, note.content_iv, key);
     const { content_encrypted, content_iv, ...rest } = note;
     return { ...rest, content };

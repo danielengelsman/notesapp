@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
 
 export async function POST(req: Request) {
   const secret = req.headers.get('x-elevenlabs-signature');
@@ -6,16 +6,16 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { text, due_date } = await req.json();
+  const { text, due_date, user_id } = await req.json();
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!user_id) {
+    return Response.json({ error: 'Missing user_id' }, { status: 400 });
   }
 
+  const supabase = createAdminClient();
+
   const { error } = await supabase.from('reminders').insert({
-    user_id: user.id,
+    user_id,
     text: text || 'Reminder',
     due_date: due_date || new Date().toISOString(),
   });

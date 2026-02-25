@@ -8,6 +8,7 @@ import { VoiceButton } from '@/components/VoiceButton';
 import { VoiceAgent } from '@/components/VoiceAgent';
 import { useNotes } from '@/lib/hooks/useNotes';
 import { getMasterKey } from '@/lib/encryption/keyManager';
+import { createClient } from '@/lib/supabase/client';
 import type { DecryptedNote, NoteFormData } from '@/types';
 
 export default function NoteEditorPage({ params }: { params: Promise<{ id: string }> }) {
@@ -16,6 +17,7 @@ export default function NoteEditorPage({ params }: { params: Promise<{ id: strin
   const [loading, setLoading] = useState(true);
   const [chatOpen, setChatOpen] = useState(false);
   const [voiceAgentOpen, setVoiceAgentOpen] = useState(false);
+  const [userId, setUserId] = useState<string | undefined>();
   const { getNote, updateNote, deleteNote } = useNotes();
   const router = useRouter();
 
@@ -31,6 +33,12 @@ export default function NoteEditorPage({ params }: { params: Promise<{ id: strin
       setLoading(false);
     }
     load();
+
+    // Get current user ID for voice agent
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) setUserId(user.id);
+    });
   }, [id, getNote, router]);
 
   const handleSave = useCallback(async (data: NoteFormData) => {
@@ -113,6 +121,7 @@ export default function NoteEditorPage({ params }: { params: Promise<{ id: strin
       <VoiceAgent
         isOpen={voiceAgentOpen}
         onClose={() => setVoiceAgentOpen(false)}
+        userId={userId}
       />
     </>
   );

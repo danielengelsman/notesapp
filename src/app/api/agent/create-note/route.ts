@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
 
 export async function POST(req: Request) {
   // Verify webhook secret if configured
@@ -7,22 +7,21 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const { title, content, folder, tags } = await req.json();
+  const { title, content, folder, tags, user_id } = await req.json();
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!user_id) {
+    return Response.json({ error: 'Missing user_id' }, { status: 400 });
   }
 
-  // Note: Content from voice agent is stored as plaintext since
+  const supabase = createAdminClient();
+
+  // Voice notes are stored as plaintext with a sentinel IV since
   // client-side encryption requires the user's key in the browser.
-  // For production, implement server-side encryption or a key exchange.
   const { error } = await supabase.from('notes').insert({
-    user_id: user.id,
+    user_id,
     title: title || 'Voice Note',
-    content_encrypted: content || '', // Placeholder — needs client-side encryption
-    content_iv: '',
+    content_encrypted: content || '',
+    content_iv: '__voice__',
     folder: folder || 'Personal',
     tags: tags || [],
     security_level: 'cloud',

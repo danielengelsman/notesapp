@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { clearMasterKey } from '@/lib/encryption/keyManager';
+import type { ViewType } from '@/types';
 
 interface SidebarProps {
   folders: string[];
@@ -12,6 +13,9 @@ interface SidebarProps {
   totalNotes: number;
   isOpen: boolean;
   onClose: () => void;
+  activeView: ViewType;
+  onViewChange: (view: ViewType) => void;
+  reminderCount: number;
 }
 
 const FOLDER_ICONS: Record<string, string> = {
@@ -22,6 +26,24 @@ const FOLDER_ICONS: Record<string, string> = {
   Archive: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
 };
 
+const VIEW_ITEMS: { key: ViewType; label: string; icon: string }[] = [
+  {
+    key: 'notes',
+    label: 'Notes',
+    icon: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z',
+  },
+  {
+    key: 'reminders',
+    label: 'Reminders',
+    icon: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    key: 'calendar',
+    label: 'Calendar',
+    icon: 'M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5',
+  },
+];
+
 export function Sidebar({
   folders,
   activeFolder,
@@ -30,6 +52,9 @@ export function Sidebar({
   totalNotes,
   isOpen,
   onClose,
+  activeView,
+  onViewChange,
+  reminderCount,
 }: SidebarProps) {
   const router = useRouter();
   const supabase = createClient();
@@ -69,22 +94,21 @@ export function Sidebar({
           <span className="text-base font-semibold text-stone-800">SecureNotes</span>
         </div>
 
-        {/* Folders */}
         <nav className="flex-1 overflow-y-auto px-3 py-3">
+          {/* Views */}
           <p className="mb-2 px-2 text-[11px] font-medium uppercase tracking-wider text-stone-400">
-            Folders
+            Views
           </p>
-          <ul className="space-y-0.5">
-            {allFolders.map((folder) => {
-              const isActive = activeFolder === folder;
-              const count = folder === 'All Notes' ? totalNotes : (noteCounts[folder] || 0);
-              const iconPath = FOLDER_ICONS[folder] || FOLDER_ICONS['Personal'];
+          <ul className="mb-4 space-y-0.5">
+            {VIEW_ITEMS.map((item) => {
+              const isActive = activeView === item.key;
+              const count = item.key === 'notes' ? totalNotes : item.key === 'reminders' ? reminderCount : 0;
 
               return (
-                <li key={folder}>
+                <li key={item.key}>
                   <button
                     onClick={() => {
-                      onFolderChange(folder);
+                      onViewChange(item.key);
                       onClose();
                     }}
                     className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors ${
@@ -94,9 +118,9 @@ export function Sidebar({
                     }`}
                   >
                     <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d={iconPath} />
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                     </svg>
-                    <span className="flex-1 text-left">{folder}</span>
+                    <span className="flex-1 text-left">{item.label}</span>
                     {count > 0 && (
                       <span className={`text-xs ${isActive ? 'text-[#2D6A4F]/70' : 'text-stone-400'}`}>
                         {count}
@@ -107,6 +131,48 @@ export function Sidebar({
               );
             })}
           </ul>
+
+          {/* Folders — only show in notes view */}
+          {activeView === 'notes' && (
+            <>
+              <p className="mb-2 px-2 text-[11px] font-medium uppercase tracking-wider text-stone-400">
+                Folders
+              </p>
+              <ul className="space-y-0.5">
+                {allFolders.map((folder) => {
+                  const isActive = activeFolder === folder;
+                  const count = folder === 'All Notes' ? totalNotes : (noteCounts[folder] || 0);
+                  const iconPath = FOLDER_ICONS[folder] || FOLDER_ICONS['Personal'];
+
+                  return (
+                    <li key={folder}>
+                      <button
+                        onClick={() => {
+                          onFolderChange(folder);
+                          onClose();
+                        }}
+                        className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors ${
+                          isActive
+                            ? 'bg-[#2D6A4F]/10 font-medium text-[#2D6A4F]'
+                            : 'text-stone-600 hover:bg-stone-50'
+                        }`}
+                      >
+                        <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d={iconPath} />
+                        </svg>
+                        <span className="flex-1 text-left">{folder}</span>
+                        {count > 0 && (
+                          <span className={`text-xs ${isActive ? 'text-[#2D6A4F]/70' : 'text-stone-400'}`}>
+                            {count}
+                          </span>
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </nav>
 
         {/* User / Sign out */}

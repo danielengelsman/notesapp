@@ -47,3 +47,10 @@ export interface NoteFormData {
   tags: string[];
   security_level: 'cloud' | 'local';
 }
+
+export interface ReminderFormData {
+  text: string;
+  due_date: string;
+}
+
+export type ViewType = 'notes' | 'reminders' | 'calendar';

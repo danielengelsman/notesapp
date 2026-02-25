@@ -1,30 +1,46 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useNotes } from '@/lib/hooks/useNotes';
+import { useReminders } from '@/lib/hooks/useReminders';
 import { useEncryption } from '@/lib/hooks/useEncryption';
+import { createClient } from '@/lib/supabase/client';
 import { Sidebar } from '@/components/Sidebar';
 import { SearchBar } from '@/components/SearchBar';
 import { NoteCard } from '@/components/NoteCard';
+import { ReminderList } from '@/components/ReminderList';
+import { CalendarView } from '@/components/CalendarView';
 import { AIChatPanel } from '@/components/AIChatPanel';
 import { VoiceButton } from '@/components/VoiceButton';
 import { VoiceAgent } from '@/components/VoiceAgent';
+import type { ViewType } from '@/types';
 
 const DEFAULT_FOLDERS = ['Personal', 'Work', 'Ideas', 'Archive'];
 
 export default function HomePage() {
   const { notes, loading, error, deleteNote, createNote } = useNotes();
+  const { reminders, loading: remindersLoading, toggleComplete, deleteReminder, createReminder } = useReminders();
   const { isUnlocked, unlock } = useEncryption();
   const [password, setPassword] = useState('');
   const [unlockError, setUnlockError] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [activeFolder, setActiveFolder] = useState('All Notes');
+  const [activeView, setActiveView] = useState<ViewType>('notes');
   const [search, setSearch] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [voiceAgentOpen, setVoiceAgentOpen] = useState(false);
+  const [userId, setUserId] = useState<string | undefined>();
   const router = useRouter();
+
+  // Get current user ID for voice agent
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) setUserId(user.id);
+    });
+  }, []);
 
   // Filter notes by folder and search query
   const filteredNotes = useMemo(() => {
@@ -52,6 +68,8 @@ export default function HomePage() {
     }
     return counts;
   }, [notes]);
+
+  const activeReminderCount = reminders.filter((r) => !r.completed).length;
 
   // Encryption unlock screen
   if (!isUnlocked) {
@@ -120,6 +138,10 @@ export default function HomePage() {
     }
   }
 
+  async function handleCreateReminder(text: string, dueDate: string) {
+    await createReminder({ text, due_date: dueDate });
+  }
+
   return (
     <div className="flex h-screen bg-[#FAFAF8]">
       {/* Sidebar */}
@@ -131,6 +153,9 @@ export default function HomePage() {
         totalNotes={notes.length}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        activeView={activeView}
+        onViewChange={setActiveView}
+        reminderCount={activeReminderCount}
       />
 
       {/* Main content */}
@@ -147,76 +172,102 @@ export default function HomePage() {
             </svg>
           </button>
 
-          {/* Search */}
-          <div className="flex-1">
-            <SearchBar value={search} onChange={setSearch} />
-          </div>
+          {/* Search — notes view only */}
+          {activeView === 'notes' && (
+            <div className="flex-1">
+              <SearchBar value={search} onChange={setSearch} />
+            </div>
+          )}
+          {activeView !== 'notes' && <div className="flex-1" />}
 
-          {/* New note */}
-          <button
-            onClick={handleCreateNote}
-            disabled={creating}
-            className="flex shrink-0 items-center gap-1.5 rounded-lg bg-[#2D6A4F] px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#245A42] disabled:opacity-50"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-            <span className="hidden sm:inline">{creating ? 'Creating...' : 'New Note'}</span>
-          </button>
+          {/* New note — notes view only */}
+          {activeView === 'notes' && (
+            <button
+              onClick={handleCreateNote}
+              disabled={creating}
+              className="flex shrink-0 items-center gap-1.5 rounded-lg bg-[#2D6A4F] px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#245A42] disabled:opacity-50"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+              <span className="hidden sm:inline">{creating ? 'Creating...' : 'New Note'}</span>
+            </button>
+          )}
         </header>
 
         {/* Content area */}
         <div className="flex-1 overflow-y-auto px-4 py-5 sm:px-6">
-          {/* Folder title */}
-          <div className="mb-4 flex items-baseline justify-between">
-            <h2 className="text-lg font-semibold text-stone-800">{activeFolder}</h2>
-            <span className="text-sm text-stone-400">
-              {filteredNotes.length} {filteredNotes.length === 1 ? 'note' : 'notes'}
-            </span>
-          </div>
-
-          {/* Loading */}
-          {loading && (
-            <div className="flex items-center justify-center py-16">
-              <div className="h-6 w-6 animate-spin rounded-full border-2 border-stone-200 border-t-[#2D6A4F]" />
-            </div>
-          )}
-
-          {/* Error */}
-          {error && (
-            <div className="rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
-              {error}
-            </div>
-          )}
-
-          {/* Empty state */}
-          {!loading && filteredNotes.length === 0 && (
-            <div className="flex flex-col items-center py-16">
-              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-stone-100">
-                <svg className="h-7 w-7 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
+          {/* ---- Notes view ---- */}
+          {activeView === 'notes' && (
+            <>
+              {/* Folder title */}
+              <div className="mb-4 flex items-baseline justify-between">
+                <h2 className="text-lg font-semibold text-stone-800">{activeFolder}</h2>
+                <span className="text-sm text-stone-400">
+                  {filteredNotes.length} {filteredNotes.length === 1 ? 'note' : 'notes'}
+                </span>
               </div>
-              <p className="text-sm text-stone-500">
-                {search ? 'No notes match your search' : 'No notes in this folder'}
-              </p>
-              {!search && (
-                <button
-                  onClick={handleCreateNote}
-                  className="mt-2 text-sm font-medium text-[#2D6A4F] hover:underline"
-                >
-                  Create a note
-                </button>
+
+              {/* Loading */}
+              {loading && (
+                <div className="flex items-center justify-center py-16">
+                  <div className="h-6 w-6 animate-spin rounded-full border-2 border-stone-200 border-t-[#2D6A4F]" />
+                </div>
               )}
-            </div>
+
+              {/* Error */}
+              {error && (
+                <div className="rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
+                  {error}
+                </div>
+              )}
+
+              {/* Empty state */}
+              {!loading && filteredNotes.length === 0 && (
+                <div className="flex flex-col items-center py-16">
+                  <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-stone-100">
+                    <svg className="h-7 w-7 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                  </div>
+                  <p className="text-sm text-stone-500">
+                    {search ? 'No notes match your search' : 'No notes in this folder'}
+                  </p>
+                  {!search && (
+                    <button
+                      onClick={handleCreateNote}
+                      className="mt-2 text-sm font-medium text-[#2D6A4F] hover:underline"
+                    >
+                      Create a note
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* Notes grid */}
+              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {filteredNotes.map((note) => (
+                  <NoteCard key={note.id} note={note} onDelete={deleteNote} />
+                ))}
+              </div>
+            </>
           )}
 
-          {/* Notes grid */}
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {filteredNotes.map((note) => (
-              <NoteCard key={note.id} note={note} onDelete={deleteNote} />
-            ))}
-          </div>
+          {/* ---- Reminders view ---- */}
+          {activeView === 'reminders' && (
+            <ReminderList
+              reminders={reminders}
+              loading={remindersLoading}
+              onToggle={toggleComplete}
+              onDelete={deleteReminder}
+              onCreate={handleCreateReminder}
+            />
+          )}
+
+          {/* ---- Calendar view ---- */}
+          {activeView === 'calendar' && (
+            <CalendarView reminders={reminders} notes={notes} />
+          )}
         </div>
       </main>
 
@@ -227,7 +278,6 @@ export default function HomePage() {
           securityLevel="cloud"
           onTranscript={(text) => {
             setChatOpen(true);
-            // The transcript will be sent via the chat panel
             console.log('Voice transcript:', text);
           }}
           onOpenAgent={() => setVoiceAgentOpen(true)}
@@ -255,6 +305,7 @@ export default function HomePage() {
       <VoiceAgent
         isOpen={voiceAgentOpen}
         onClose={() => setVoiceAgentOpen(false)}
+        userId={userId}
       />
     </div>
   );
