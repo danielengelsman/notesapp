@@ -1,14 +1,13 @@
 import type { NextConfig } from "next";
-import withSerwistInit from "@serwist/next";
-
-const withSerwist = withSerwistInit({
-  swSrc: "src/app/sw.ts",
-  swDest: "public/sw.js",
-  disable: process.env.NODE_ENV === "development",
-});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // The entire company runs as static files: the marketing site and the
+  // product are exported HTML+JS. No server, no APIs, no keys — the product's
+  // core promise ("your books never leave your browser") is enforced by
+  // architecture, not policy.
+  output: "export",
+  images: { unoptimized: true },
+  trailingSlash: true,
 };
 
-export default withSerwist(nextConfig);
+export default nextConfig;

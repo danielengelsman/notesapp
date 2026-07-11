@@ -1,0 +1,35 @@
+{
+  "txnCount": 1369,
+  "lineCount": 2865,
+  "totalDebits": 340853674,
+  "accounts": 28,
+  "customers": 12,
+  "vendors": 8,
+  "items": 5,
+  "trialBalance2025": {
+    "Checking": 41276435,
+    "Accounts Receivable": 12536350,
+    "Equipment": 5400000,
+    "Accumulated Depreciation": -3240000,
+    "Equipment Loan": -640000,
+    "Owner's Equity": -2500000,
+    "Owner Draws": 9720000,
+    "Landscaping Income": -8392050,
+    "Snow Removal Income": -888250,
+    "Design Income": -15988500,
+    "Materials & Plants": 3871598,
+    "Fuel": 1040264,
+    "Insurance": 306000,
+    "Office Supplies": 45000,
+    "Software Subscriptions": 130800,
+    "Utilities:Phone": 174000,
+    "Utilities:Internet": 106800,
+    "Payroll Expenses": 6806618,
+    "Depreciation Expense": 540000,
+    "Retained Earnings": -50305065
+  },
+  "dateRange": {
+    "min": "2020-01-01",
+    "max": "2025-12-31"
+  }
+}

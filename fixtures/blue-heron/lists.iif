@@ -1,0 +1,59 @@
+!HDR	PROD	VER	REL	IIFVER	DATE	TIME	ACCNTNT	ACCNTNTSPLITTIME
+HDR	QuickBooks Pro	Version 23.0D	Release R7P	1	12/31/2025	1735689600	N	0
+!ACCNT	NAME	ACCNTTYPE	DESC	ACCNUM	EXTRA
+ACCNT	Checking	BANK		1000	
+ACCNT	Savings	BANK		1010	
+ACCNT	Accounts Receivable	AR		1200	
+ACCNT	Undeposited Funds	OCASSET		1300	
+ACCNT	Equipment	FIXASSET		1500	
+ACCNT	Accumulated Depreciation	FIXASSET		1510	
+ACCNT	Accounts Payable	AP		2000	
+ACCNT	Company Credit Card	CCARD		2100	
+ACCNT	Sales Tax Payable	OCLIAB		2200	
+ACCNT	Equipment Loan	LTLIAB		2500	
+ACCNT	Owner's Equity	EQUITY		3000	
+ACCNT	Owner Draws	EQUITY		3100	
+ACCNT	Retained Earnings	EQUITY		3900	
+ACCNT	Landscaping Income	INC		4000	
+ACCNT	Snow Removal Income	INC		4100	
+ACCNT	Design Income	INC		4200	
+ACCNT	Materials & Plants	COGS		5000	
+ACCNT	Subcontractors	COGS		5100	
+ACCNT	Fuel	EXP		6000	
+ACCNT	Equipment Repairs	EXP		6100	
+ACCNT	Insurance	EXP		6200	
+ACCNT	Office Supplies	EXP		6300	
+ACCNT	Software Subscriptions	EXP		6400	
+ACCNT	Utilities:Phone	EXP		6510	
+ACCNT	Utilities:Internet	EXP		6520	
+ACCNT	Payroll Expenses	EXP		6600	
+ACCNT	Interest Expense	EXP		6700	
+ACCNT	Depreciation Expense	EXP		6800	
+!CUST	NAME	BADDR1	BADDR2	BADDR3	PHONE1	EMAIL	BALANCE
+CUST	Meadowbrook HOA	100 Garden Way	Fairview, OR 97024		503-555-0100	meadowbrook.hoa@example.com	
+CUST	Tom & Priya Whitfield	101 Garden Way	Fairview, OR 97024		503-555-0101	tom.priya.whitfield@example.com	
+CUST	Cascade Office Park	102 Garden Way	Fairview, OR 97024		503-555-0102	cascade.office.park@example.com	
+CUST	Juniper Dental	103 Garden Way	Fairview, OR 97024		503-555-0103	juniper.dental@example.com	
+CUST	Hartley's Hardware	104 Garden Way	Fairview, OR 97024		503-555-0104	hartley.s.hardware@example.com	
+CUST	Riverbend Apartments	105 Garden Way	Fairview, OR 97024		503-555-0105	riverbend.apartments@example.com	
+CUST	St. Anne's Church	106 Garden Way	Fairview, OR 97024		503-555-0106	st.anne.s.church@example.com	
+CUST	Kestrel Brewing Co	107 Garden Way	Fairview, OR 97024		503-555-0107	kestrel.brewing.co@example.com	
+CUST	The Nguyen Family	108 Garden Way	Fairview, OR 97024		503-555-0108	the.nguyen.family@example.com	
+CUST	Copper Kettle Cafe	109 Garden Way	Fairview, OR 97024		503-555-0109	copper.kettle.cafe@example.com	
+CUST	Fairview School District	110 Garden Way	Fairview, OR 97024		503-555-0110	fairview.school.district@example.com	
+CUST	Marisol Ortega	111 Garden Way	Fairview, OR 97024		503-555-0111	marisol.ortega@example.com	
+!VEND	NAME	ADDR1	ADDR2	PHONE1	EMAIL	BALANCE
+VEND	Valley Nursery Supply	200 Commerce St	Fairview, OR 97024	503-555-0200		
+VEND	Redline Fuel Stop	201 Commerce St	Fairview, OR 97024	503-555-0201		
+VEND	Summit Insurance Group	202 Commerce St	Fairview, OR 97024	503-555-0202		
+VEND	Beacon Equipment Rental	203 Commerce St	Fairview, OR 97024	503-555-0203		
+VEND	GreenTech Irrigation	204 Commerce St	Fairview, OR 97024	503-555-0204		
+VEND	City of Fairview	205 Commerce St	Fairview, OR 97024	503-555-0205		
+VEND	Northside Print Shop	206 Commerce St	Fairview, OR 97024	503-555-0206		
+VEND	ToolTown	207 Commerce St	Fairview, OR 97024	503-555-0207		
+!INVITEM	NAME	INVITEMTYPE	DESC	PRICE	ACCNT
+INVITEM	Weekly Maintenance	SERV	Weekly grounds maintenance	185.00	Landscaping Income
+INVITEM	Spring Cleanup	SERV	Seasonal cleanup package	425.00	Landscaping Income
+INVITEM	Snow Plowing	SERV	Per-visit snow removal	95.00	Snow Removal Income
+INVITEM	Landscape Design	SERV	Design consultation	950.00	Design Income
+INVITEM	Mulch Install	SERV	Mulch delivery and install	300.00	Landscaping Income
