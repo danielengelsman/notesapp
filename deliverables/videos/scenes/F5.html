@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { background: var(--paper); }
+.receipts { display:flex; gap:30px; margin-bottom:60px; }
+.r { background:var(--cream); border:1px solid var(--rule); border-radius:12px; padding:22px 26px; width:330px;
+  font-family:ui-monospace,'DejaVu Sans Mono',monospace; font-size:15px; color:var(--ink); opacity:0;
+  box-shadow:0 12px 36px rgba(27,42,34,.10); }
+.r h3 { font-family:Georgia,'DejaVu Serif',serif; font-size:18px; margin-bottom:10px; color:var(--stead); }
+.r:nth-child(1){ animation: fadein .5s 1.0s forwards; }
+.r:nth-child(2){ animation: fadein .5s 2.6s forwards; }
+.r:nth-child(3){ animation: fadein .5s 4.2s forwards; }
+.green { color:var(--green); font-weight:700; }
+.dim { color:var(--slate); }
+.final { text-align:center; opacity:0; animation: fadein .8s 7.6s forwards; }
+.final .line { font-size:44px; color:var(--ink); }
+.final .brand { margin-top:18px; display:flex; align-items:center; justify-content:center; gap:12px; }
+.final .brand span { font-size:30px; font-weight:700; color:var(--ink); }
+</style></head><body>
+<div class="center">
+  <div class="receipts">
+    <div class="r"><h3>The decision log</h3><span class="dim">D-008 · THE PICK</span><br>Ledgerlift 287 vs Roundtrip 280<br><span class="dim">dissent recorded, grafts noted</span></div>
+    <div class="r"><h3>The evidence</h3>53 pains · 7 specialist dossiers<br>every claim → source URL<br><span class="dim">5 ideas killed by skeptic agents</span></div>
+    <div class="r"><h3>The arithmetic</h3><span class="green">✓ 26 tests passed</span><br>1,369 txns reconciled<br><span class="green">Δ 0.00 across 20 accounts</span></div>
+  </div>
+  <div class="final">
+    <div class="line serif">Judge me by the arithmetic.</div>
+    <div class="brand">
+      <svg width="38" height="38" viewBox="0 0 64 64" fill="none">
+        <path d="M6 30 L32 12 L58 30" stroke="#2E5E43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 34 V56 H52 V34" stroke="#2E5E43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M27 56 V44 a5 5 0 0 1 10 0 V56" stroke="#2E5E43" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="serif">Bookstead</span>
+    </div>
+  </div>
+</div>
+</body></html>

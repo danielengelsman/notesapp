@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { background: var(--paper); }
+h1 { font-size:34px; color:var(--ink); margin-bottom:44px; opacity:0; animation: fadein .6s .3s forwards; }
+.bracket { display:flex; align-items:center; gap:60px; }
+.col { display:flex; flex-direction:column; gap:14px; }
+.pitch { background:var(--cream); border:1px solid var(--rule); border-radius:10px; padding:12px 22px;
+  font-size:19px; font-weight:600; color:var(--ink); opacity:0; width:300px; }
+.pitch small { display:block; font-weight:400; color:var(--slate); font-size:14px; }
+.pitch:nth-child(1){ animation: fadein .4s 4.6s forwards; }
+.pitch:nth-child(2){ animation: fadein .4s 5.1s forwards; }
+.pitch:nth-child(3){ animation: fadein .4s 5.6s forwards; }
+.pitch:nth-child(4){ animation: fadein .4s 6.1s forwards; }
+.pitch:nth-child(5){ animation: fadein .4s 6.6s forwards; }
+.dead { text-decoration: line-through; opacity:.55 !important; }
+.p4 { border:2px solid var(--stead); }
+.judges { text-align:center; opacity:0; animation: fadein .6s 8.4s forwards; }
+.judges .j { font-size:17px; color:var(--slate); padding:6px 0; }
+.arrow { font-size:44px; color:var(--copper); opacity:0; animation: fadeonly .5s 9.4s forwards; }
+.winner { background:var(--stead); color:#fff; border-radius:14px; padding:26px 36px; text-align:center;
+  opacity:0; animation: fadein .7s 10.4s forwards; box-shadow:0 20px 60px rgba(30,66,48,.35); }
+.winner .w { font-size:34px; font-weight:800; }
+.winner .t { font-size:18px; opacity:.9; margin-top:4px; }
+.invoice { position:absolute; top:64px; right:70px; background:var(--cream); border:1px solid var(--rule);
+  padding:14px 20px; border-radius:8px; transform:rotate(2deg); font-size:17px; color:var(--ink);
+  opacity:0; animation: fadein .6s 1.4s forwards; box-shadow:0 10px 30px rgba(27,42,34,.15); }
+.invoice b { color:var(--red); }
+</style></head><body>
+<div class="center">
+  <h1 class="serif">Five pitches. Four judges. One survivor.</h1>
+  <div class="bracket">
+    <div class="col">
+      <div class="pitch dead">RejectReady <small>DMARC coach — served by free tiers</small></div>
+      <div class="pitch">Roundtrip <small>video-feedback converter — runner-up</small></div>
+      <div class="pitch dead">Paydirt <small>trades job tool — crowded</small></div>
+      <div class="pitch p4">Ledger evacuation <small>the one with a deadline on an invoice</small></div>
+      <div class="pitch dead">DepositProof <small>landlord evidence — thin wedge</small></div>
+    </div>
+    <div class="judges">
+      <div class="j">⚖ investor lens</div>
+      <div class="j">⚖ customer lens</div>
+      <div class="j">⚖ builder lens</div>
+      <div class="j">⚖ distribution lens</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="winner">
+      <div class="w serif">Bookstead</div>
+      <div class="t">Don't fight the software. Free the data.</div>
+    </div>
+  </div>
+</div>
+<div class="invoice tab">QuickBooks® Desktop renewal<br><b>$1,049.00 / yr</b> — due on arrival</div>
+</body></html>

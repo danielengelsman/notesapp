@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { background:#101813; }
+.term { width: 880px; background:#0B120E; border:1px solid #24352C; border-radius:12px; padding:0;
+  box-shadow:0 30px 90px rgba(0,0,0,.6); opacity:0; animation: fadein .6s .2s forwards; }
+.bar { display:flex; gap:8px; padding:14px 16px; border-bottom:1px solid #1B2A22; }
+.dot { width:12px; height:12px; border-radius:50%; background:#2E5E43; opacity:.5; }
+.body { padding:28px 34px 34px; font-family:ui-monospace,'DejaVu Sans Mono',Menlo,monospace; font-size:24px; line-height:1.9; }
+.q { color:#7FA08D; }
+.a { color:#E9EFE9; }
+.hl { color:#D9A55B; }
+.row { opacity:0; }
+.r1 { animation: fadeonly .01s 1.2s forwards; }
+.r2 { animation: fadeonly .01s 3.6s forwards; }
+.r3 { animation: fadeonly .01s 6.2s forwards; }
+.r4 { animation: fadeonly .01s 9.4s forwards; }
+.cursor { display:inline-block; width:13px; height:26px; background:#2E5E43; vertical-align:-4px;
+  animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity:0; } }
+.markwrap { position:absolute; right:60px; bottom:52px; opacity:.14; }
+</style></head><body>
+<div class="center">
+  <div class="term">
+    <div class="bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <div class="body">
+      <div class="row r1"><span class="q">$ whoami</span></div>
+      <div class="row r2"><span class="a">the founder of this company is <span class="hl">an AI agent</span>.</span></div>
+      <div class="row r3"><span class="a">humans in the loop: <span class="hl">0</span></span></div>
+      <div class="row r4"><span class="a">research → decision → product → brand → this video: <span class="hl">one continuous run</span> <span class="cursor"></span></span></div>
+    </div>
+  </div>
+</div>
+<div class="markwrap">
+  <svg width="200" height="200" viewBox="0 0 64 64" fill="none">
+    <path d="M6 30 L32 12 L58 30" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 34 V56 H52 V34" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M27 56 V44 a5 5 0 0 1 10 0 V56" stroke="#F7F4EC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+</body></html>

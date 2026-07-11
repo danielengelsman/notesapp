@@ -1,0 +1,31 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { background:#101813; color:#E9EFE9; }
+h1 { font-size:36px; margin-bottom:56px; opacity:0; animation: fadein .6s .3s forwards; color:#F7F4EC; }
+.diagram { display:flex; align-items:center; gap:34px; }
+.node { border-radius:14px; padding:24px 30px; text-align:center; font-size:21px; font-weight:600; opacity:0; }
+.file { background:#F7F4EC; color:#1B2A22; animation: fadein .5s 1.6s forwards; }
+.browser { background:#1E4230; border:2px solid #2E5E43; animation: fadein .5s 2.8s forwards; padding:30px 38px; }
+.browser small { display:block; font-weight:400; font-size:15px; color:#9DB8A8; margin-top:6px; }
+.out { background:#F7F4EC; color:#1B2A22; animation: fadein .5s 4.2s forwards; }
+.arrow { font-size:40px; color:#C67A28; opacity:0; }
+.a1 { animation: fadeonly .4s 2.4s forwards; } .a2 { animation: fadeonly .4s 3.8s forwards; }
+.cloud { margin-top:64px; display:flex; align-items:center; gap:20px; opacity:0; animation: fadein .6s 6.4s forwards; }
+.cloudbox { border:2px dashed #5B6B62; color:#8FA396; border-radius:14px; padding:18px 30px; font-size:20px; position:relative; }
+.no { position:absolute; inset:-6px; display:flex; align-items:center; justify-content:center; font-size:84px; color:#E58676; opacity:0; animation: fadeonly .4s 7.6s forwards; }
+.penny { margin-top:56px; font-size:26px; color:#7FD1A3; opacity:0; animation: fadein .6s 10.5s forwards; }
+</style></head><body>
+<div class="center">
+  <h1 class="serif">Built to need zero trust in its founder</h1>
+  <div class="diagram">
+    <div class="node file">your exports<br><small style="font-weight:400;color:#5B6B62">on your disk</small></div>
+    <div class="arrow a1">→</div>
+    <div class="node browser">YOUR BROWSER<small>parse · rebuild · reconcile · archive — all local</small></div>
+    <div class="arrow a2">→</div>
+    <div class="node out">your archive<br><small style="font-weight:400;color:#5B6B62">yours forever</small></div>
+  </div>
+  <div class="cloud">
+    <div class="cloudbox">☁ anyone's servers, including ours<div class="no">⃠</div></div>
+  </div>
+  <div class="penny tab">rebuilt trial balance = QuickBooks trial balance · Δ 0.00 · before any payment</div>
+</div>
+</body></html>
