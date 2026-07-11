@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookstead — the whole company, built in one run</title>
+<style>
+  :root{
+    --ink:#1B2A22;--stead:#2E5E43;--pine:#1E4230;--paper:#F7F4EC;--cream:#FFFDF7;
+    --copper:#C67A28;--slate:#5B6B62;--green:#1E7A4E;--greenbg:#E4F2EA;
+    --red:#A93226;--redbg:#FBEAE7;--rule:#E2DDD0;
+    --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+    --sans:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+  .tab{font-variant-numeric:tabular-nums}
+  h1,h2,h3{font-family:var(--serif);letter-spacing:-.015em;line-height:1.15}
+  a{color:var(--stead)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  header.hero{background:radial-gradient(ellipse at 50% 0%, #24352C, #16211B 80%);color:#F7F4EC;padding:70px 0 60px;text-align:center}
+  .mark{margin:0 auto 18px;display:block}
+  header.hero h1{font-size:46px}
+  header.hero .tag{font-size:24px;color:#9DB8A8;margin-top:8px;font-family:var(--serif)}
+  header.hero .lede{max-width:640px;margin:22px auto 0;color:#C9D6CE;font-size:17px}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+  .pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 15px;font-size:13.5px;color:#DCE6DF}
+  section{padding:52px 0;border-bottom:1px solid var(--rule)}
+  section h2{font-size:30px;margin-bottom:6px}
+  section .kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;font-weight:700;color:var(--copper);margin-bottom:8px}
+  .card{background:var(--cream);border:1px solid var(--rule);border-radius:12px;padding:22px 24px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;margin-top:8px}
+  @media(max-width:760px){.statrow{grid-template-columns:1fr 1fr}}
+  .stat .n{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--stead)}
+  .stat .l{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate)}
+  video{width:100%;border-radius:12px;border:1px solid var(--rule);background:#000;display:block}
+  .vcap{font-size:14px;color:var(--slate);margin-top:8px}
+  .arc{list-style:none;counter-reset:s}
+  .arc li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px dashed var(--rule)}
+  .arc li:last-child{border-bottom:none}
+  .arc li::before{content:counter(s);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:var(--stead);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--sans)}
+  .arc b{font-size:16.5px}
+  .arc span{color:var(--slate)}
+  code,kbd{font-family:ui-monospace,'DejaVu Sans Mono',Menlo,monospace;font-size:13.5px}
+  pre{background:#16211B;color:#DCE6DF;border-radius:10px;padding:16px 18px;overflow-x:auto;font-size:13.5px;line-height:1.7}
+  pre .c{color:#7FA08D}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate)}
+  .ok{color:var(--green);font-weight:700}
+  .warn{color:var(--red);font-weight:700}
+  .files a{display:block;padding:11px 14px;border:1px solid var(--rule);border-radius:9px;background:var(--cream);text-decoration:none;color:var(--ink);margin-bottom:8px}
+  .files a:hover{border-color:var(--stead)}
+  .files .d{font-size:13.5px;color:var(--slate)}
+  .banner{background:var(--greenbg);border:1px solid #BfE0CC;border-radius:12px;padding:16px 20px;color:var(--green);font-weight:600}
+  .honest{background:var(--redbg);border:1px solid #EBC6C1;border-radius:12px;padding:16px 20px;color:#7E241A}
+  footer{padding:40px 0;text-align:center;color:var(--slate);font-size:13.5px}
+  .muted{color:var(--slate)}
+  .lead{font-size:18px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="mark" width="72" height="72" viewBox="0 0 64 64" fill="none">
+      <path d="M6 30 L32 12 L58 30" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 30 L32 18 L50 30" stroke="#F7F4EC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+      <path d="M32 12 L32 22" stroke="#F7F4EC" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+      <path d="M12 34 V56 H52 V34" stroke="#F7F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M27 56 V44 a5 5 0 0 1 10 0 V56" stroke="#F7F4EC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h1>Bookstead</h1>
+    <div class="tag">Your books, yours again.</div>
+    <p class="lede">A complete company — problem, product, brand, website, and two films — researched, designed, and built end-to-end in a single autonomous run. This page is the tour. Everything below is real and runs locally.</p>
+    <div class="pills">
+      <span class="pill">12-agent pain hunt → 53 pains</span>
+      <span class="pill">5-pitch tournament, 4 judges</span>
+      <span class="pill">Working product · 35 tests</span>
+      <span class="pill">2 films, neural VO</span>
+      <span class="pill">4 red-team agents survived</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The one-sentence version</div>
+    <h2>What is Bookstead?</h2>
+    <p class="lead" style="margin-top:14px;max-width:760px">
+      QuickBooks® Desktop now costs <strong>$1,149 a year</strong> — and if you stop paying, your own
+      company file goes view-only, then won't open at all. Bookstead is a tool that
+      <strong>evacuates your entire QuickBooks Desktop history</strong> into a permanent archive you keep
+      forever, plus clean import files for wherever you go next — and it
+      <strong>proves the conversion is penny-perfect before you pay a cent</strong>. It runs entirely in
+      your browser; your books never upload anywhere.
+    </p>
+    <div class="statrow tab" style="margin-top:26px">
+      <div class="stat card"><div class="n">$1,149</div><div class="l">QBD Pro Plus / yr, Feb 2026</div></div>
+      <div class="stat card"><div class="n">$149</div><div class="l">Bookstead, once</div></div>
+      <div class="stat card"><div class="n">0</div><div class="l">bytes uploaded, by design</div></div>
+      <div class="stat card"><div class="n">Δ 0.00</div><div class="l">reconciliation, before payment</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Watch</div>
+    <h2>The two films</h2>
+    <p class="muted" style="margin:8px 0 22px">Motion graphics and <em>real footage of the working product</em>, voiced by a neural TTS voice — a synthetic voice for a synthetic founder, on purpose. If a video doesn't play inline, open the files in <code>deliverables/videos/</code>.</p>
+    <div class="grid g2">
+      <div>
+        <video controls preload="metadata" src="videos/bookstead-launch.mp4"></video>
+        <div class="vcap"><strong>Launch film</strong> · ~73s — the squeeze, the product, the archive, the price.</div>
+      </div>
+      <div>
+        <video controls preload="metadata" src="videos/bookstead-founder.mp4"></video>
+        <div class="vcap"><strong>Founder film</strong> · ~78s — the founder is the AI that built this, and says so.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Run it yourself</div>
+    <h2>Demo the product in three minutes</h2>
+    <p class="muted" style="margin:8px 0 18px">Requires Node 20+ (built on Node 22). From the repository root:</p>
+    <pre><span class="c"># from the repo root</span>
+npm install
+npm run fixtures     <span class="c"># build the deterministic sample company</span>
+npm test             <span class="c"># 35 engine tests, incl. penny-perfect reconciliation</span>
+npm run build        <span class="c"># static export to out/</span>
+npx serve out        <span class="c"># → http://localhost:3000</span></pre>
+    <ol class="arc" style="margin-top:24px">
+      <li><b>Open the site → “Open Bookstead”</b> <span>(or go straight to <code>/app/</code>).</span></li>
+      <li><b>Click “Try the sample company” → “Run the free check.”</b> <span>Watch 1,369 transactions across six years reconcile against QuickBooks' own trial balance — every account, Δ 0.00.</span></li>
+      <li><b>Download the archive</b> <span>— one self-contained <code>.html</code>. Open it: search transactions, drill accounts, print a P&amp;L. It works offline, forever, with no Bookstead account.</span></li>
+      <li><b>Download the migration pack</b> <span>— a <code>.zip</code> with GnuCash, Manager.io, and generic CSV/JSON exports, each with import instructions.</span></li>
+      <li><b>Test the paid flow</b> <span>— on your own files, downloads are license-gated. Use the key in <code>deliverables/DEMO_LICENSE.txt</code>, or mint one: <kbd>npx tsx scripts/make-license.ts you@example.com</kbd>. It's verified in-browser with Ed25519 — no server is contacted.</span></li>
+    </ol>
+    <div class="banner" style="margin-top:22px">The privacy claim is enforced by architecture, not policy: the whole app is a static export with a <code>connect-src 'self'</code> CSP. Load the app, turn off your wifi, and every step above still works.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The proof</div>
+    <h2>Why the product is trustworthy with money</h2>
+    <p class="muted" style="margin:8px 0 16px">Bookstead never asks to be believed. It rebuilds your ledger from the transaction export and diffs it against QuickBooks' own trial balance, in whole cents. Here is the actual output for the sample company:</p>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:6px">
+        <strong>Blue Heron Landscaping LLC — reconciliation</strong>
+        <span class="ok">✓ matches to the penny</span>
+      </div>
+      <table class="tab">
+        <thead><tr><th>Account</th><th style="text-align:right">QuickBooks</th><th style="text-align:right">Rebuilt</th><th style="text-align:right">Δ</th></tr></thead>
+        <tbody>
+          <tr><td>Checking</td><td style="text-align:right">412,764.35</td><td style="text-align:right">412,764.35</td><td style="text-align:right" class="ok">0.00</td></tr>
+          <tr><td>Accounts Receivable</td><td style="text-align:right">125,363.50</td><td style="text-align:right">125,363.50</td><td style="text-align:right" class="ok">0.00</td></tr>
+          <tr><td>Equipment Loan</td><td style="text-align:right">(6,400.00)</td><td style="text-align:right">(6,400.00)</td><td style="text-align:right" class="ok">0.00</td></tr>
+          <tr><td>Landscaping Income</td><td style="text-align:right">(83,920.50)</td><td style="text-align:right">(83,920.50)</td><td style="text-align:right" class="ok">0.00</td></tr>
+          <tr><td colspan="4" style="color:var(--slate);font-size:13.5px">…20 accounts · 1,369 transactions · 2020–2025 · total debits 819,538.65 = 819,538.65</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="margin-top:14px">A deliberately sabotaged export (account filter left on) is <strong>caught</strong> — the diff turns red and points at the exact account. That test is in the suite. The free tier shows this whole report; payment unlocks the downloads.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">How it was built</div>
+    <h2>The arc — nine phases, orchestrated by agents</h2>
+    <ol class="arc" style="margin-top:16px">
+      <li><b>Hunt for pain.</b> <span>12 researchers swept small-business, trades, HN, SaaS-review, freelancer, clinic, landlord and other communities → <strong>53 documented pains</strong>, each with quotes and URLs.</span></li>
+      <li><b>Verify &amp; shortlist.</b> <span>Skeptic agents tried to refute each; 5 of the top 8 were killed as already-served. The recurring anger: subscription creep and data hostage-taking.</span></li>
+      <li><b>Tournament.</b> <span>5 founder agents pitched competing businesses; a 4-lens judge panel (investor / customer / builder / distribution) scored them. Winner: the QuickBooks-Desktop escape.</span></li>
+      <li><b>Design the business.</b> <span>7 specialist agents (market, competition, pricing, GTM, legal, tech-spec, naming) produced sourced dossiers → the business plan.</span></li>
+      <li><b>Brand.</b> <span>Named <em>Bookstead</em> (the working name “Ledgerlift” was killed by a real trademark collision), logo, palette, voice.</span></li>
+      <li><b>Build the product + site.</b> <span>A real conversion engine (parsers → ledger rebuild → reconciliation → archive &amp; export generators), a marketing site, and the app — all client-side.</span></li>
+      <li><b>Launch film.</b> <span>Motion graphics + real product footage, neural voiceover, assembled with ffmpeg.</span></li>
+      <li><b>Founder film.</b> <span>The disclosure that the founder is an AI — turned into the trust argument.</span></li>
+      <li><b>Try to kill it.</b> <span>4 adversarial agents (fact-check, product QA, business red-team, completeness critic). They found a stale price, a P0 CSV-injection bug, a license bypass, and more — all fixed and regression-tested.</span></li>
+    </ol>
+    <p class="muted" style="margin-top:14px">Every decision, with rationale, is in <a href="DECISIONS.md">DECISIONS.md</a> (D-001 … D-016).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The honest scorecard</div>
+    <h2>What the kill attempt found — and what it means</h2>
+    <p class="muted" style="margin:8px 0 16px">A finished package hides nothing. The adversarial reviews are shipped in full inside <code>deliverables/research/</code>. Summary:</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="font-size:18px;margin-bottom:8px">Fixed before you're reading this</h3>
+        <ul style="padding-left:18px;color:var(--slate);font-size:14.5px;line-height:1.8">
+          <li>Flagship price corrected everywhere ($1,049 → $1,149, Feb 2026), videos re-recorded.</li>
+          <li>P0 spreadsheet-formula injection neutralized in every export.</li>
+          <li>License-unlock bypass &amp; demo/real data merge closed.</li>
+          <li>Per-file parsing, account-number matching, impossible-date rejection.</li>
+          <li>Real Content-Security-Policy now ships (the claim was ahead of the code).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:18px;margin-bottom:8px">Stated, not hidden</h3>
+        <ul style="padding-left:18px;color:var(--slate);font-size:14.5px;line-height:1.8">
+          <li><strong>A human must front the business.</strong> An AI can't pass a merchant-of-record KYC — the #1 handoff item before a dollar can change hands.</li>
+          <li>Realistic first-year revenue is bookkeeper-led, ~$10–60k, not viral — the plan says so.</li>
+          <li>v1 converts the general ledger; audit trail / attachments / payroll detail aren't carried (told plainly on the site).</li>
+          <li>Facts were verified July 2026; the build sandbox blocks re-fetching, so time-sensitive figures should be re-checked before launch.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="honest" style="margin-top:16px"><strong>Verdict from the red team: SHIP-WITH-CHANGES.</strong> The changes were applied. Read the raw reviews: <a href="research/red-team.md">red-team.md</a> · <a href="research/fact-check.md">fact-check.md</a> · <a href="research/qa-attack.md">qa-attack.md</a> · <a href="research/completeness-audit.md">completeness-audit.md</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Everything in the box</div>
+    <h2>The deliverables</h2>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="files">
+        <a href="BUSINESS_PLAN.md"><strong>BUSINESS_PLAN.md</strong><div class="d">Problem, wedge, market, pricing, GTM, risks — sources inline (~6k words)</div></a>
+        <a href="DECISIONS.md"><strong>DECISIONS.md</strong><div class="d">Every call in the run, with rationale (D-001 … D-016)</div></a>
+        <a href="BRAND.md"><strong>BRAND.md</strong><div class="d">Name, logo, palette, type, voice</div></a>
+        <a href="videos/bookstead-launch.mp4"><strong>videos/</strong><div class="d">Launch + founder films, plus scene source &amp; VO script</div></a>
+      </div>
+      <div class="files">
+        <a href="research/"><strong>research/</strong><div class="d">Pain hunt, tournament, 7 dossiers, and the 4 adversarial reviews</div></a>
+        <a href="../src/engine/"><strong>src/engine/</strong><div class="d">The conversion engine + tests (1,800 LOC, 35 tests)</div></a>
+        <a href="../src/app/"><strong>src/app/</strong><div class="d">Marketing site + the client-side product</div></a>
+        <a href="../README.md"><strong>README.md</strong><div class="d">Exact run commands and repo map</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Built end-to-end by an autonomous AI agent, July 2026. No new spending; nothing published; every fact researched.</p>
+    <p style="margin-top:8px">Intuit and QuickBooks are registered trademarks of Intuit Inc. Bookstead is an independent product, not affiliated with or endorsed by Intuit Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
