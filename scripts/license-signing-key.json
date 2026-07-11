@@ -1,0 +1,5 @@
+{
+  "note": "PRODUCTION: keep only in the checkout webhook env",
+  "privatePkcs8Base64": "MC4CAQAwBQYDK2VwBCIEIK/U/gOCP9ETA62dNXv8mrcoWnDl/xJ8l0+tpZAFq+VE",
+  "publicSpkiBase64": "MCowBQYDK2VwAyEAKFKJKSbRKS3gwSWSEaZ5fqHV2Jd2Kocsc3MhxehekLA="
+}

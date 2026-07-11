@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1b2a22;
+  --color-stead: #2e5e43;
+  --color-pine: #1e4230;
+  --color-paper: #f7f4ec;
+  --color-cream: #fffdf7;
+  --color-copper: #c67a28;
+  --color-slate2: #5b6b62;
+  --color-verified: #1e7a4e;
+  --color-verified-bg: #e4f2ea;
+  --color-ledgerred: #a93226;
+  --color-ledgerred-bg: #fbeae7;
+  --color-rule: #e2ddd0;
+
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+::selection { background: #d9e8df; }
