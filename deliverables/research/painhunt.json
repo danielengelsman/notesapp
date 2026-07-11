@@ -1,0 +1,854 @@
+{
+ "totalFound": 53,
+ "allPains": [
+  {
+   "title": "Subscription-forced accounting software gouging micro-businesses (QuickBooks/Xero refugees)",
+   "who": "Owners of micro and small businesses (1-10 staff) who ran QuickBooks Desktop or entry-tier Xero for years and are being force-migrated to subscriptions with 30-70%+ annual price hikes",
+   "angle": "smallbiz"
+  },
+  {
+   "title": "Mailchimp billing for unsubscribed contacts plus 2025 free-plan gutting is bleeding small senders",
+   "who": "Small business owners, solo creators, authors, and nonprofits running newsletters of 250-5,000 contacts on Mailchimp",
+   "angle": "smallbiz"
+  },
+  {
+   "title": "Salon and barbershop owners feel held hostage by booking platforms' commission and fee creep (Fresha)",
+   "who": "Independent salon, barbershop, and spa owners (1-15 staff) whose client calendar lives inside Fresha or similar marketplace booking platforms",
+   "angle": "smallbiz"
+  },
+  {
+   "title": "HoneyBook's ~89% price hike stranded solo creatives who need lightweight client management (contracts + invoices + scheduling)",
+   "who": "Solo photographers, wedding/event planners, designers, and other client-service freelancers who ran their business on HoneyBook's cheap Starter plan",
+   "angle": "smallbiz"
+  },
+  {
+   "title": "Seat-and-add-on subscription creep in field-service software crushes 1-5 person trade crews",
+   "who": "Owner-operators and micro-crews (1-5 people) in lawn care, cleaning, plumbing, HVAC, electrical, handyman work who only need quote -> schedule -> invoice -> get paid",
+   "angle": "trades"
+  },
+  {
+   "title": "No-refund annual billing, charge-after-cancel, and data-loss dark patterns have destroyed trust in field-service SaaS",
+   "who": "Small trade-business owners who prepaid annual plans or tried to cancel Jobber/Housecall Pro subscriptions",
+   "angle": "trades"
+  },
+  {
+   "title": "Embedded payment processors freeze contractors' money for days-to-weeks with no explanation",
+   "who": "Service contractors who accept card/consumer-finance payments through Housecall Pro (Stripe-backed) and similar FSM-embedded processors",
+   "angle": "trades"
+  },
+  {
+   "title": "DMARC report monitoring without an enterprise SaaS or an Elasticsearch stack",
+   "who": "Small-business IT admins, agencies managing client domains, indie SaaS founders and self-hosters who were forced to publish DMARC records by the Feb-2024 Google/Yahoo bulk-sender mandates and now receive daily gzipped XML aggregate reports they cannot read",
+   "angle": "hn"
+  },
+  {
+   "title": "Google Photos Takeout exodus: broken dates, stripped GPS, and JSON-sidecar chaos",
+   "who": "Prosumers and families de-googling or migrating decades of photos to Immich/Ente/local storage, who discover their Takeout export has metadata split into loose JSON files and timestamps wrecked",
+   "angle": "hn"
+  },
+  {
+   "title": "Digital legacy / emergency access: families locked out when the account-holder dies",
+   "who": "Tech-savvy spouses and parents (HN demographic skews 30s-40s with kids) who run the family's finances, domains, crypto, photos, and 2FA, and realize nobody else could reconstruct any of it",
+   "angle": "hn"
+  },
+  {
+   "title": "Freelancer invoicing without subscriptions, bloat, or payment-rail commissions",
+   "who": "Freelance developers, consultants, and micro-agencies sending a handful of invoices a month who resent paying FreshBooks/QuickBooks monthly or losing a cut to platforms' forced payment processing",
+   "angle": "hn"
+  },
+  {
+   "title": "Small-team internal wiki that people can actually search and won't rot",
+   "who": "Engineering leads and ops managers at 5-50-person companies responsible for onboarding docs, runbooks, and design docs",
+   "angle": "hn"
+  },
+  {
+   "title": "QuickBooks subscription price hikes and forced desktop migration are squeezing small businesses out of their own books",
+   "who": "US/Canada small business owners and solo bookkeepers who have run QuickBooks Desktop or a low-tier QuickBooks Online plan for years",
+   "angle": "saas_reviews"
+  },
+  {
+   "title": "Email marketing tools bill for dead weight: Mailchimp charges for unsubscribed contacts and keeps hiking prices while shrinking the free tier",
+   "who": "Newsletter authors, indie e-commerce owners, nonprofits, and solo marketers with 1k-20k contact lists",
+   "angle": "saas_reviews"
+  },
+  {
+   "title": "Evernote refugees: repeated price shocks and forced plan migrations are driving 10+ year note-takers to hunt for an app they can own",
+   "who": "Prosumers and knowledge workers with a decade of notes locked in Evernote (and similar cloud note apps), often paying customers of 5-12 years",
+   "angle": "saas_reviews"
+  },
+  {
+   "title": "Per-response ransom in form builders: Typeform and Jotform cap submissions so hard that a single successful campaign forces an upgrade",
+   "who": "Marketers, agencies, event organizers, and small businesses collecting signups, surveys, and intake forms",
+   "angle": "saas_reviews"
+  },
+  {
+   "title": "Freelancer client-management CRMs (HoneyBook, Dubsado) hit loyal users with up-to-89% overnight price hikes, and the escape options just raised prices too",
+   "who": "Photographers, wedding vendors, designers, and other creative solo businesses running proposals, contracts, and invoices through a client-management CRM",
+   "angle": "saas_reviews"
+  },
+  {
+   "title": "Solo-creative CRM price-hike exodus: HoneyBook/Dubsado refugees want a simple, cheap client-flow tool",
+   "who": "Wedding photographers, videographers, planners, and other solo creative service pros who run inquiries, proposals, contracts, and invoices through HoneyBook or Dubsado",
+   "angle": "freelancers"
+  },
+  {
+   "title": "Frame.io priced out freelance video editors: client review/approval costs enterprise money for a simple job",
+   "who": "Freelance videographers, wedding/corporate video editors, and 1-5 person studios who need clients to leave timecoded comments and approve cuts",
+   "angle": "freelancers"
+  },
+  {
+   "title": "Website/design feedback still arrives as indecipherable screenshots, email threads, and PowerPoints",
+   "who": "Freelance web designers and small digital agencies collecting revision feedback from non-technical clients on websites and design work",
+   "angle": "freelancers"
+  },
+  {
+   "title": "Scope creep has no paper trail: 'one small change' snowballs into unbilled hours with no tooling to log or invoice it",
+   "who": "Freelance designers, developers, writers, and creatives on fixed-price projects with contractual revision limits nobody actually tracks",
+   "angle": "freelancers"
+  },
+  {
+   "title": "Chasing late invoices is an unpaid part-time job freelancers dread",
+   "who": "Freelancers and independent contractors across writing, design, and production invoicing clients directly (off-platform)",
+   "angle": "freelancers"
+  },
+  {
+   "title": "Solo therapists squeezed by EHR price-creep and feature-gating (SimplePractice)",
+   "who": "Solo and small-group therapists/counselors in private practice, especially cash-pay clinicians who use a fraction of their EHR's features",
+   "angle": "clinics"
+  },
+  {
+   "title": "PT private practices nickel-and-dimed and locked in by WebPT (paying hundreds/month extra just for appointment reminders)",
+   "who": "Owners of small private-practice physical therapy clinics (1-10 therapists) using WebPT/Therabill",
+   "angle": "clinics"
+  },
+  {
+   "title": "Dental front desks burn 1-2 staff-hours per day on hold verifying insurance eligibility",
+   "who": "Dental office managers and front-desk staff at independent (non-DSO) dental practices",
+   "angle": "clinics"
+  },
+  {
+   "title": "Veterinary practices trapped on outdated legacy practice-management software (Avimark/Cornerstone)",
+   "who": "Veterinary practice owners and practice managers at independent small-animal clinics",
+   "angle": "clinics"
+  },
+  {
+   "title": "UK landlords forced off spreadsheets by Making Tax Digital (mandatory since April 2026) with quarterly filings they hate and software they distrust",
+   "who": "UK private landlords with over 50k GBP rental/self-employment income (roughly 900k people in the first mandation wave), most of whom self-manage 1-10 properties and have kept records in Excel for years",
+   "angle": "landlords"
+  },
+  {
+   "title": "Small landlords have no affordable defense against AI-generated fake pay stubs and fraudulent rental applications",
+   "who": "Independent landlords and small property managers (1-20 units) who screen applicants themselves; enterprise fraud-detection tools like Snappt are priced and sold for large multifamily operators",
+   "angle": "landlords"
+  },
+  {
+   "title": "The 2-20 unit landlord is stranded between spreadsheets and PM software built for 50-500 unit managers, with junk fees on everything",
+   "who": "US self-managing landlords with roughly 2-20 units \u2014 too big for a single spreadsheet tab, too small to justify Buildium/AppFolio/DoorLoop pricing designed for professional property management companies",
+   "angle": "landlords"
+  },
+  {
+   "title": "Maintenance requests scattered across texts, calls, and voicemails \u2014 lost repairs, angry tenants, and vanished legal evidence",
+   "who": "Self-managing landlords with a handful of units who run maintenance off their personal phone, plus tenants stuck re-sending requests",
+   "angle": "landlords"
+  },
+  {
+   "title": "Landlords lose security-deposit disputes by default \u2014 missed statutory deadlines, missing itemizations, and no timestamped photo trail",
+   "who": "Small landlords handling their own move-ins/move-outs, especially in strict states like California (21-day deadline, receipts required for deductions over $125, new 2024-2025 photo-documentation requirements under AB 2801)",
+   "angle": "landlords"
+  },
+  {
+   "title": "Independent tutors chasing parents for payment (and dreading the money conversation)",
+   "who": "Independent private tutors (often current/ex schoolteachers side-hustling or full-time solo tutors, UK/US) who bill parents directly per session or per block at \u00a330-60/hr",
+   "angle": "education"
+  },
+  {
+   "title": "Short-notice cancellations: tutors eat the cost and can't bring themselves to enforce a fee",
+   "who": "Independent tutors and private music/instrument teachers who sell fixed weekly slots to families",
+   "angle": "education"
+  },
+  {
+   "title": "Make-up lessons and slot swaps: the scheduling chaos that makes music teachers 'crazy'",
+   "who": "Private music studio teachers (piano, strings, voice) running 20-60 weekly student slots from home studios, plus small multi-teacher music schools",
+   "angle": "education"
+  },
+  {
+   "title": "Multichannel inventory sync dread for micro-sellers (Etsy + Shopify + Square/eBay)",
+   "who": "Handmade/vintage micro-sellers (1-500 SKUs) selling on Etsy plus one or two other channels (Shopify store, Square at craft fairs, eBay), often one-of-a-kind items",
+   "angle": "ecommerce"
+  },
+  {
+   "title": "Etsy sellers cannot see true per-order profit under a 20-25%+ compound fee stack",
+   "who": "Etsy sellers, especially those pushed into mandatory Offsite Ads (>$10k/yr revenue) and those pricing handmade goods with materials + labor",
+   "angle": "ecommerce"
+  },
+  {
+   "title": "Marketplace payout reconciliation is the part of tax season sellers dread most",
+   "who": "Etsy/Amazon/Shopify sellers doing their own books, and the bookkeepers serving them; strongest for sellers on QuickBooks Online",
+   "angle": "ecommerce"
+  },
+  {
+   "title": "Shopify 'app tax' bloat \u2014 merchants can't see or control their stacking app subscriptions",
+   "who": "Small-to-mid Shopify merchants running 5-20 apps; agency operators auditing client stacks",
+   "angle": "ecommerce"
+  },
+  {
+   "title": "Etsy variation-level bulk editing is impossible \u2014 sellers edit hundreds of listings one by one",
+   "who": "Etsy sellers with large catalogs and variation-heavy products (sizes, colors, materials): print shops, jewelry, apparel, POD sellers",
+   "angle": "ecommerce"
+  },
+  {
+   "title": "Twice-orphaned read-it-later users no longer trust any cloud save-for-later service",
+   "who": "Prosumer knowledge workers, developers, and heavy readers who kept years of saved articles/highlights in Pocket (shut down by Mozilla, July 8 2025) and/or Omnivore (shut down after ElevenLabs acqui-hire, Nov 2024)",
+   "angle": "iwouldpay"
+  },
+  {
+   "title": "The web-articles-to-e-reader pipeline died with Pocket and nothing replaced it",
+   "who": "Kobo and Kindle owners (prosumers who paid $100-300 for e-ink devices) who used Pocket's native Kobo integration or Pocket+Calibre plugins to read web articles and newsletters on their e-reader",
+   "angle": "iwouldpay"
+  },
+  {
+   "title": "Freelance video editors and small agencies want self-hosted client review instead of per-seat Frame.io subscriptions",
+   "who": "Solo video editors, videographers, and small video production agencies who need clients to view cuts, leave timestamped comments, and approve versions",
+   "angle": "iwouldpay"
+  },
+  {
+   "title": "Meetup.com's post-acquisition squeeze is pushing community organizers to seek an exit they can own",
+   "who": "Organizers of tech/hobby community groups (Python user groups, WordPress meetups, PyData chapters) and the foundations (PSF, NumFOCUS, WordPress.org) footing the Meetup.com bills",
+   "angle": "iwouldpay"
+  },
+  {
+   "title": "Komoot users are rescuing years of routes after the Bending Spoons acquisition paywalled what they already bought",
+   "who": "Cyclists, bikepackers, and hikers (prosumers with GPS head units and paid Komoot 'complete package' one-time purchases) in Europe",
+   "angle": "iwouldpay"
+  },
+  {
+   "title": "Home records orphaned: Centriq shut down and deleted a decade of homeowners' appliance/maintenance data",
+   "who": "Homeowners (especially recent buyers and prosumer 'house nerds') who tracked appliances, manuals, serial numbers, receipts, paint colors, and service history in a home-management app",
+   "angle": "personal_ops"
+  },
+  {
+   "title": "The 'death binder' problem: organizing everything a surviving spouse needs, without a $99-240/yr cloud subscription",
+   "who": "Financially-savvy household 'CFOs' (Bogleheads/personal-finance prosumers, typically 45-75) whose spouse/family has no idea where accounts, passwords, and documents live",
+   "angle": "personal_ops"
+  },
+  {
+   "title": "Subscription tracking without handing your bank login to a startup \u2014 incumbents are either creepy or abandoned",
+   "who": "Privacy-conscious consumers and prosumers auditing recurring charges (and small-business owners tracking SaaS spend) who refuse to link bank accounts via Plaid",
+   "angle": "personal_ops"
+  },
+  {
+   "title": "Adult children flying blind on aging parents' affairs: no shared record of accounts, documents, meds, and who's doing what",
+   "who": "Adult children (often 3-6 siblings, some remote) coordinating care and eventual estate handling for aging parents; the primary caregiver bears the tracking burden alone",
+   "angle": "personal_ops"
+  },
+  {
+   "title": "Per-ticket fee anger and held payouts: small orgs and nonprofits feel gouged by Eventbrite",
+   "who": "Small event organizers, community groups, and small nonprofits running paid workshops, fundraisers, and community events (25-300 tickets, $10-$50 price points)",
+   "angle": "events_nonprofits"
+  },
+  {
+   "title": "Small-church volunteer scheduling: Planning Center is overkill and coordinators burn out doing it by text",
+   "who": "Volunteer coordinators and admin staff/pastors at churches under ~300 members (also synagogues and small ministries) \u2014 usually one part-time or volunteer person doing all scheduling",
+   "angle": "events_nonprofits"
+  },
+  {
+   "title": "SignUpGenius resentment: ad-cluttered, 2008-era signup sheets held ransom by tier pricing",
+   "who": "PTA/PTO parents, church and nonprofit volunteer organizers, team parents, and community group admins who run 6-30 signups a year",
+   "angle": "events_nonprofits"
+  },
+  {
+   "title": "HoneyBook's 89% price hike radicalized wedding vendors and creative freelancers against subscription CRMs",
+   "who": "Wedding photographers, planners, florists, DJs, and other solo creative-service vendors managing inquiries, contracts, invoices, and client comms",
+   "angle": "events_nonprofits"
+  },
+  {
+   "title": "Wedding day-of coordination is a vendor-confirmation email grind with no acknowledgment loop",
+   "who": "Wedding coordinators, day-of/'month-of' planners, and venue coordinators managing 6-12 vendors per event across dozens of events a year",
+   "angle": "events_nonprofits"
+  }
+ ],
+ "shortlist": [
+  {
+   "title": "Google Photos Takeout repair: offline app that fixes broken dates, GPS, and JSON-sidecar chaos",
+   "who": "Prosumers and families de-googling or migrating decades of photos to Immich/Ente/local storage",
+   "pain_description": "Google Takeout rips capture time and geolocation out of photos into loose, language-localized JSON sidecars whose folder layout keeps changing. Entire photo histories import with wrong dates. The main free fixer (GooglePhotosTakeoutHelper) keeps breaking against new export formats, and the $39 commercial fixer is closed-source and machine-locked \u2014 users are literally asking strangers to split the license cost.",
+   "merged_from": [
+    "Google Photos Takeout exodus: broken dates, stripped GPS, and JSON-sidecar chaos"
+   ],
+   "evidence": [
+    {
+     "url": "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/issues/479",
+     "quote": "Anyone interested in sharing the $39 costs for Metadata Fixer?"
+    },
+    {
+     "url": "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/issues/480",
+     "quote": "The Folders have mixed JSON and JPEG files, they are not separated."
+    },
+    {
+     "url": "https://news.ycombinator.com/item?id=39571747",
+     "quote": "Google Takeout downloads the images in full quality. But it splits your metadata..."
+    },
+    {
+     "url": "https://news.ycombinator.com/item?id=45341121",
+     "quote": "Ask HN: Is there no way to incrementally backup from Google photos?"
+    }
+   ],
+   "existing_solutions": "GooglePhotosTakeoutHelper (free CLI, continuously breaking on new export formats \u2014 a dozen fresh GitHub issues Jan\u2013Jul 2026), MetadataFixer.com ($39, closed-source, license-hostile), Ente's importer (only if migrating to Ente), hand-rolled exiftool scripts.",
+   "why_underserved": "The free tool is a volunteer CLI lagging Google's format changes and intimidating non-technical users; the paid tool is opaque enough that people publicly cost-share licenses. Nobody offers a polished, offline, point-at-folder repair app with dry-run preview.",
+   "willingness_to_pay_signal": "Strongest direct WTP in the entire set: a $39 commercial fixer already sells in this exact niche, and users are motivated enough to try splitting licenses. One-time pricing pre-validated.",
+   "score": 84,
+   "rationale": "Best buildability-to-evidence ratio of all 53. Pure offline (exiftool/wasm, zero runtime APIs), shippable by a solo founder well inside a month, pricing model already proven by an inferior competitor, evidence directly verified on GitHub (not snippet-attributed), and the pain regenerates every time Google changes the export format or a new wave de-googles. Main limit is one-time revenue per customer, not demand."
+  },
+  {
+   "title": "Simple client-flow tool for HoneyBook/Dubsado refugees: proposal \u2192 e-sign contract \u2192 invoice, flat price",
+   "who": "Solo photographers, wedding vendors, planners, designers, and other creative client-service freelancers booking ~10-50 clients/year",
+   "pain_description": "HoneyBook raised its entry plan $19\u2192$36/mo in Feb 2025 (~89%, applied to existing users), and Dubsado followed with its own ~60% hike in Dec 2025, leaving the duopoly at price parity. Users say the platforms keep bolting on AI/CRM bloat while the loop they actually need \u2014 send proposal, get contract signed, invoice, schedule \u2014 is tiny. Result: a loud, documented, actively-shopping refugee cohort ('The prices have doubled... makes no sense to me'; '$600 is wildly overpriced for what I am receiving').",
+   "merged_from": [
+    "HoneyBook's ~89% price hike stranded solo creatives who need lightweight client management (contracts + invoices + scheduling)",
+    "Freelancer client-management CRMs (HoneyBook, Dubsado) hit loyal users with up-to-89% overnight price hikes, and the escape options just raised prices too",
+    "Solo-creative CRM price-hike exodus: HoneyBook/Dubsado refugees want a simple, cheap client-flow tool",
+    "HoneyBook's 89% price hike radicalized wedding vendors and creative freelancers against subscription CRMs"
+   ],
+   "evidence": [
+    {
+     "url": "https://www.trustpilot.com/review/honeybook.com",
+     "quote": "The prices have doubled, and so VERY HIGH right now which makes no sense to me."
+    },
+    {
+     "url": "https://www.trustpilot.com/review/honeybook.com",
+     "quote": "almost $600 is wildly overpriced for what I am receiving."
+    },
+    {
+     "url": "https://fstoppers.com/business/honeybooks-price-hike-coming-heres-what-need-know-and-how-save-690584",
+     "quote": "HoneyBook's Price Hike Is Coming: Here's What You Need to Know (and How to Save)"
+    },
+    {
+     "url": "https://taskip.net/honeybook-pricing/",
+     "quote": "HoneyBook Pricing 2026: 89.5% Price Hike - Stay or Switch?"
+    },
+    {
+     "url": "https://prospeo.io/s/honeybook-alternatives",
+     "quote": "I use Pixieset for gallery delivery and website, so I'm just going to cancel HoneyBook and move everything over there."
+    }
+   ],
+   "existing_solutions": "HoneyBook ($36-129/mo post-hike), Dubsado (hiked Dec 2025, notorious setup curve), 17hats, Bonsai, Moxie \u2014 all subscription SaaS trending upmarket; fallback is Google Docs contracts + PayPal invoices + Calendly.",
+   "why_underserved": "Both incumbents repriced within 10 months of each other; every alternative is another VC SaaS whose answer to churn is more features. Nobody sells the boring three-feature loop at $99-149/yr or one-time, with the freelancer's own Stripe/PayPal links for payment (no platform take). Click-to-accept e-sign with audit trail needs no paid API.",
+   "willingness_to_pay_signal": "Users happily paid $19-36/mo ($228-432/yr) and revolted at the increase, not at paying \u2014 they cite $600/yr as 'wildly overpriced', implying $100-200/yr converts. Documented post-hike market-share loss proves they re-shop on price.",
+   "score": 83,
+   "rationale": "Found independently by four of twelve researchers \u2014 the strongest convergence signal in the batch. Fresh, angry, price-anchored cohort created by two dated events (Feb 2025, Dec 2025); ruthlessly scoped v1 (proposal, click-to-sign contract, invoice PDF, booking) is a one-month build with zero runtime APIs. Risk: retention features (client portal polish) take longer, and Trustpilot quotes are snippet-verified only."
+  },
+  {
+   "title": "Local-first, buy-once bookkeeping for QuickBooks Desktop refugees",
+   "who": "Owners of micro-businesses (1-10 staff) force-migrated off perpetual QuickBooks Desktop licenses onto $810-$1,000+/yr subscriptions",
+   "pain_description": "Intuit killed one-time-purchase QuickBooks Desktop and repriced identical basic features (invoices, expenses, reports) as escalating subscriptions \u2014 users cite 48-70% single-year hikes and 20-year loyalty ending in fury on Intuit's own forums. Xero is hiking in parallel. Owners feel gouged by a ~85%-share monopoly whose CPA lock-in keeps them captive, and are openly begging for any non-subscription alternative that just does simple books.",
+   "merged_from": [
+    "Subscription-forced accounting software gouging micro-businesses (QuickBooks/Xero refugees)",
+    "QuickBooks subscription price hikes and forced desktop migration are squeezing small businesses out of their own books"
+   ],
+   "evidence": [
+    {
+     "url": "https://quickbooks.intuit.com/community/other-questions-9/longtime-customer-deeply-disappointed-by-quickbooks-pricing-and-forced-migration-90743",
+     "quote": "now I'm being asked to pay nearly $1,000 per year\u2014a 70% increase\u2014for the same basic features I've used for two decades."
+    },
+    {
+     "url": "https://quickbooks.intuit.com/learn-support/en-us/other-questions/price-increase-2025/00/1546802",
+     "quote": "We just received an emailed stating our annual fee is now $810. Time to look at other options."
+    },
+    {
+     "url": "https://quickbooks.intuit.com/learn-support/en-ca/other-questions/ridiculous-49-subscription-price-increase-for-desktop-2025/00/1536098",
+     "quote": "Ridiculous 49% subscription price increase for Desktop 2025"
+    },
+    {
+     "url": "https://quickbooks.intuit.com/learn-support/en-ca/other-questions/48-price-increase-for-qbx-desktop-for-small-business/00/1533874",
+     "quote": "48% price increase for Qbx desktop for small business | QuickBooks Community"
+    }
+   ],
+   "existing_solutions": "QuickBooks Online (the thing they're fleeing), Xero (~10-12%/yr hikes), Wave (ad/payments-monetized, features removed), FreshBooks (subscription), GnuCash (free/local but accountant-grade UX), spreadsheets. Nothing modern offers buy-once, local-first simple bookkeeping with clean exports for the CPA.",
+   "why_underserved": "Every funded competitor copies the SaaS model because VC economics demand it; the 'simple books, my data, my machine, fair price' segment is structurally abandoned. Clean CSV/report export for the accountant sidesteps the CPA lock-in rather than fighting it.",
+   "willingness_to_pay_signal": "Buyers already budget $500-$1,000+/yr for this category and are explicitly shopping in multi-page forum threads; a $99-199 one-time or low flat fee undercuts spend 5-10x.",
+   "score": 81,
+   "rationale": "Highest pain intensity and cleanest WTP in the set \u2014 multi-page rage threads on the vendor's own forum, verified quotes, recurring with every annual reprice. Docked on buildability: even a narrow ledger+invoicing+CSV-import v1 is the chunkiest one-month build here, and trust/correctness expectations for accounting software are high. The market's size and fury justify the risk."
+  },
+  {
+   "title": "Flat-price newsletter tool with BYO-SMTP/SES where unsubscribed contacts cost nothing",
+   "who": "Small business owners, authors, creators, and nonprofits running 250-20k-contact newsletters on Mailchimp",
+   "pain_description": "Mailchimp bills for unsubscribed, cleaned, and non-subscribed contacts \u2014 senders pay monthly for people they are legally forbidden to email unless they manually archive them, with long-tenured lists carrying 20-40% dead weight. Intuit then gutted the free plan repeatedly through Dec 2025 (250 contacts / 500 sends, automations removed), shoving tiny senders onto $45-60+/mo tiers. Trustpilot: 2.7/5 across 1,368 reviews.",
+   "merged_from": [
+    "Mailchimp billing for unsubscribed contacts plus 2025 free-plan gutting is bleeding small senders",
+    "Email marketing tools bill for dead weight: Mailchimp charges for unsubscribed contacts and keeps hiking prices while shrinking the free tier"
+   ],
+   "evidence": [
+    {
+     "url": "https://www.productiveblogging.com/unsubscribed-contacts-mailchimp/",
+     "quote": "count unsubscribers as well as subscribers in the total number of contacts (or 'audience' as Mailchimp calls it)... you still have to pay!"
+    },
+    {
+     "url": "https://saasprices.net/blog/mailchimp-nerfed-free-plan",
+     "quote": "Mailchimp Drastically Reduces Free Plan Limits"
+    },
+    {
+     "url": "https://5forests.com/tired-of-paying-for-non-subscribers-in-mailchimp-us-too/",
+     "quote": "Tired of paying for non-subscribers in Mailchimp? Us too."
+    },
+    {
+     "url": "https://digitalsproductivity.com/is-mailchimp-overpriced-in-2026-247-users-share-real-costs/",
+     "quote": "Is Mailchimp Overpriced in 2026? 247 Users Share Real Costs - DigitalEdgeLab"
+    }
+   ],
+   "existing_solutions": "Mailchimp/Constant Contact/AWeber (per-contact billing is the pain), MailerLite/Brevo/EmailOctopus (cheaper, same treadmill), listmonk/Mautic (free self-hosted but Docker/Postgres/DNS sysadmin-grade). Standard 'fix' is a recurring manual archive-unsubscribers chore before each billing date.",
+   "why_underserved": "Every hosted ESP monetizes per stored contact, so no incumbent will fix the incentive; the self-hosted escape hatches filter out exactly the non-technical owners who complain loudest. A dead-simple flat-price app with bring-your-own SMTP/SES, where unsubscribed contacts cost nothing by design, is structurally off-limits to incumbents.",
+   "willingness_to_pay_signal": "Users pay $45-300+/mo and can quantify the waste ($180+/yr on unsubscribed-contact billing alone); one analysis found 418 users publicly leaving Mailchimp Nov 2025-Feb 2026. Single-digit monthly or flat pricing is an easy calculation.",
+   "score": 79,
+   "rationale": "Found by two researchers independently; the Dec 2025 free-plan cut re-ignited the complaint wave, so timing is hot. BYO sending credentials means zero paid APIs for the founder. Docked slightly on buildability nuance: deliverability hand-holding (DNS, warmup) is real support burden, and 'help non-technical users configure SES' is the hidden hard part. Still a clear structural wedge no incumbent can copy."
+  },
+  {
+   "title": "UK landlord Making Tax Digital record-keeper: keep your spreadsheet workflow, file quarterly to HMRC",
+   "who": "UK private landlords with >\u00a350k rental income (~900k people mandated since April 2026; the >\u00a330k wave hits April 2027), mostly self-managing 1-10 properties from Excel",
+   "pain_description": "Since April 2026 these landlords must keep digital records and file quarterly HMRC updates; spreadsheets are only legal with fiddly 'digital link' bridging software. July 2026 surveys show ~13 hours/month on tax admin, 22% considering quitting the rental market over the burden, 59% fearing penalties, and the alternatives are \u00a3300-800/yr extra accountant fees or subscription SaaS that takes custody of their data.",
+   "merged_from": [
+    "UK landlords forced off spreadsheets by Making Tax Digital (mandatory since April 2026) with quarterly filings they hate and software they distrust"
+   ],
+   "evidence": [
+    {
+     "url": "https://bdcmagazine.com/2026/07/almost-a-quarter-of-landlords-ready-to-quit-the-rental-market-over-making-tax-digital-burden/",
+     "quote": "Almost a quarter of landlords ready to quit the rental market over Making Tax Digital burden"
+    },
+    {
+     "url": "https://www.lettingagenttoday.co.uk/breaking-news/2026/07/growing-role-for-agents-as-landlords-struggle-with-making-tax-digital/",
+     "quote": "Landlords now spend an average of 13 hours a month \u2013 more than a day and a half of work \u2013 managing tax and financial admin."
+    },
+    {
+     "url": "https://anna.money/blog/guides/making-tax-digital-costs/",
+     "quote": "businesses moving to MTD will incur around \u00a3280 to \u00a3350 in transitional costs, along with ongoing annual costs of around \u00a3115"
+    }
+   ],
+   "existing_solutions": "Accountants (\u00a3300-800/yr extra for quarterly support), Landlord Studio/Hammock/Landlord Vision (cloud subscriptions holding the data), Xero/QuickBooks (overkill, not per-property), clunky VAT-era bridging retrofits. 39% still on spreadsheets/manual methods.",
+   "why_underserved": "Incumbent MTD tools demand data custody; landlords explicitly want to keep their own records. A landlord-native, local-first record keeper with per-property income categorisation plus HMRC quarterly submission (the MTD Income Tax API is free \u2014 developer registration, not a paid API) is a thin, well-defined wedge. Timing is exceptional: mandation began 3 months ago, next wave April 2027 grows the market.",
+   "willingness_to_pay_signal": "Landlords value the admin time at \u00a33,000+/yr, face \u00a3280-350 transitional costs and \u00a3300-800/yr accountant quotes; dozens of paid tools on HMRC's recognised-software list validate the budget. \u00a350-150/yr undercuts everything.",
+   "score": 78,
+   "rationale": "The only candidate with a government-enforced forcing function \u2014 demand is compulsory, dated, and expanding. Free API, clear buyer, evergreen quarterly recurrence. Docked for: crowded HMRC-recognised list (validated but contested), HMRC recognition/integration process eating into the one-month window, and tax-domain correctness stakes. Evidence is trade-press/survey rather than raw first-person rants."
+  },
+  {
+   "title": "Drag-and-drop DMARC report reader: human-readable dashboards without enterprise SaaS or an ELK stack",
+   "who": "Small-business IT admins, agencies managing many client domains, indie SaaS founders and self-hosters forced into DMARC by the Feb-2024 Google/Yahoo bulk-sender mandates",
+   "pain_description": "DMARC aggregate reports arrive daily as gzipped XML nobody can read. Options are pricey per-domain SaaS (dmarcian, Valimail) that sees all your mail metadata, or parsedmarc dragging in Elasticsearch/Kibana with documented multi-GB memory problems \u2014 for a few MB of XML. Most small domain owners just ignore the reports and lose spoofing/deliverability visibility; understanding DMARC at all 'almost broke' people.",
+   "merged_from": [
+    "DMARC report monitoring without an enterprise SaaS or an Elasticsearch stack"
+   ],
+   "evidence": [
+    {
+     "url": "https://news.ycombinator.com/item?id=38936316",
+     "quote": "Is there any service that can process DMARC report e-mails? Those mails with zip..."
+    },
+    {
+     "url": "https://github.com/domainaware/parsedmarc/issues/533",
+     "quote": "I noticed a memory consumption problem to process a large volume of emails (98000)."
+    },
+    {
+     "url": "https://news.ycombinator.com/item?id=39712634",
+     "quote": "I figured out how DMARC works, and it almost broke me"
+    },
+    {
+     "url": "https://news.ycombinator.com/item?id=45822916",
+     "quote": "Show HN: DMARC report parser as a single Go binary (SQLite, no Elasticsearch)"
+    }
+   ],
+   "existing_solutions": "dmarcian/Valimail/Postmark DMARC (per-domain subscription SaaS, third party reads mail metadata); parsedmarc + full ELK stack (free but heavyweight, memory-hungry); ignoring the reports (the default).",
+   "why_underserved": "The 2024 mandates massively expanded who must run DMARC, but tooling still assumes enterprise budget or devops appetite. A Nov-2025 Show HN whose entire pitch was 'single binary, no Elasticsearch' proves the lightweight middle is still open \u2014 especially a fully client-side reader agencies can trust with client metadata (drag-drop zips, parse in browser, zero runtime APIs).",
+   "willingness_to_pay_signal": "Incumbents charge monthly per-domain fees and are repeatedly recommended in threads \u2014 businesses already pay. Agencies managing many client domains are the concentrated, multi-domain buyer.",
+   "score": 76,
+   "rationale": "Cleanest technical build in the set (pure client-side XML parsing, genuinely zero infrastructure) with a regulatory tailwind and recurrence across 6+ independent HN threads 2024-2026 plus direct GitHub verification. Docked because pain intensity is annoyance-grade rather than rage-grade, the single-binary Show HN shows competition arriving in the exact gap, and solo self-hosters expect free \u2014 the paying wedge (agencies) needs deliberate targeting."
+  },
+  {
+   "title": "Self-hosted client video review: timestamped comments, no-login approval links, and NLE marker export (Frame.io escape)",
+   "who": "Freelance video editors, videographers, and 1-5 person production studios who need clients to leave frame-accurate comments and approve cuts",
+   "pain_description": "Post-Adobe Frame.io is per-seat, storage-capped, and enterprise-priced for what a solo editor needs ('hard to justify... especially after having some clients not even use the system'). Small shops are already fleeing to months-old self-hosted projects (ViTransfer, FreeFrame) on their own NAS hardware, then filing issues describing the residual pain: juggling WeTransfer for inbound footage and hand-retyping every timecoded comment back into Resolve/Premiere because nothing exports review notes as NLE markers.",
+   "merged_from": [
+    "Frame.io priced out freelance video editors: client review/approval costs enterprise money for a simple job",
+    "Freelance video editors and small agencies want self-hosted client review instead of per-seat Frame.io subscriptions"
+   ],
+   "evidence": [
+    {
+     "url": "https://github.com/MansiVisuals/ViTransfer/issues/25",
+     "quote": "First off, thanks for this awesome self-hosted tool \u2013 it's a great Frame.io alternative and runs smoothly on my TrueNAS setup. I'm using it for my video production agency..."
+    },
+    {
+     "url": "https://github.com/Techiebutler/freeframe/issues/84",
+     "quote": "Review feedback (timecoded comments) currently has to be read manually and matched back to timecodes by hand in the NLE. For larger projects with many comments this is slow and error-prone."
+    },
+    {
+     "url": "https://www.capterra.com/p/148214/Frame-io/reviews/",
+     "quote": "Frame.io's cost can be difficult to accept, especially after having some clients not even use the system."
+    },
+    {
+     "url": "https://www.g2.com/products/frame-io/reviews",
+     "quote": "One thing I feel Frame.io could improve is the pricing, especially for freelancers or small creative teams."
+    }
+   ],
+   "existing_solutions": "Frame.io (Adobe, $15-25+/seat/mo, cloud custody of footage), Vimeo Review (Bending Spoons-owned \u2014 same squeeze fear), Dropbox Replay, and young self-hosted upstarts (ViTransfer, FreeFrame) users praise but which lack client uploads, marker export, and polish. Fallback: WeTransfer + clients emailing '2:31 the music is weird' with wrong timestamps.",
+   "why_underserved": "All incumbents are per-seat cloud subscriptions from acquirers video pros distrust; the self-hosted upstarts are months old and missing exactly the features users file issues about. A focused v1 \u2014 upload cut, password link, client comments frame-accurately with no account, editor exports EDL/FCPXML markers \u2014 is well-scoped and needs no paid APIs (HTML5 playback; bundled ffmpeg later).",
+   "willingness_to_pay_signal": "Working businesses with client deliverables: they pay Frame.io seat fees today and buy TrueNAS hardware to escape; the agency user in evidence offers to beta test. Money is demonstrably in the workflow.",
+   "score": 75,
+   "rationale": "Two researchers converged, and the GitHub evidence is firsthand professionals describing their own production workflow (verified verbatim \u2014 rare in this batch). The NLE round-trip is a concrete, ownable differentiator neither upstart has shipped. Docked because the free self-hosted projects could close the gap quickly and video handling (storage, transcode support burden) makes the month tight; strict v1 scoping (H.264-only uploads) is mandatory."
+  },
+  {
+   "title": "Flat-price, own-your-data job tool for 1-5 person trade crews: quote \u2192 schedule \u2192 invoice, no seat fees, no lock-in",
+   "who": "Owner-operators and micro-crews in lawn care, cleaning, plumbing, HVAC, electrical, and handyman work paying Jobber/Housecall Pro $149-400+/mo after add-on and seat creep",
+   "pain_description": "Field-service platforms advertise $39-59/mo, then gate the needed basics (second seat, QuickBooks sync, estimates) behind tiers and add-ons until real bills hit $149-400+/mo (~$10k/yr for a 10-person shop). On top of the cost creep, trust is destroyed: Jobber holds a BBB F rating with reports of $424-$1,700 no-refund charges, billing after confirmed cancellation, and imports that silently deleted client data. Owners explicitly say they hate ongoing fees and want something simple they own.",
+   "merged_from": [
+    "Seat-and-add-on subscription creep in field-service software crushes 1-5 person trade crews",
+    "No-refund annual billing, charge-after-cancel, and data-loss dark patterns have destroyed trust in field-service SaaS",
+    "Embedded payment processors freeze contractors' money for days-to-weeks with no explanation"
+   ],
+   "evidence": [
+    {
+     "url": "https://www.trustpilot.com/review/housecallpro.com",
+     "quote": "This company was nickel and diming my company per invoice, per ticket, per whatever else."
+    },
+    {
+     "url": "https://www.lawnsite.com/threads/scheduling-software.386821/page-2",
+     "quote": "I hate paying monthly fee's or ongoing fee's"
+    },
+    {
+     "url": "https://www.bbb.org/ca/ab/edmonton/profile/computer-software/jobber-0017-214334/customer-reviews",
+     "quote": "Jobber | BBB Reviews | Better Business Bureau (F rating; all customer reviews 1-star as of early 2026)"
+    },
+    {
+     "url": "https://myquoteiq.com/jobber-reviews/",
+     "quote": "This company has gone downhill for sometime."
+    },
+    {
+     "url": "https://www.trustpilot.com/review/housecallpro.com",
+     "quote": "literally every credit card payment or finance payment that we accept gets held up"
+    }
+   ],
+   "existing_solutions": "Jobber ($39-200+/mo, +$29/extra user), Housecall Pro ($59 entry lacking QuickBooks sync and a second seat; realistic $149-300+/mo), ServiceTitan ($245-500/tech/mo, $5K-50K implementation). All per-seat cloud subscriptions; none offer buy-once or self-hosted, and their embedded payments freeze contractors' money for days-to-weeks.",
+   "why_underserved": "The category consolidated on VC per-seat SaaS whose model requires expanding ARPU; the huge long tail of 1-5 person crews wanting flat-price quote/calendar/invoice/customer-history is deliberately unserved (free tiers hobbled to force upgrades). The trust collapse (no-refund billing, data loss, payment holds) hands a challenger a ready-made positioning wedge: local data, one-click export, no embedded payments \u2014 'nobody holds your money.'",
+   "willingness_to_pay_signal": "Owners resentfully pay $1,200-10,000/yr today; competitor marketing claims 10,000+ contractors switching over price alone. $10-30/mo flat or ~$200 one-time is trivially below current spend, and avoiding a single $424-1,700 refund-denial incident pays for years.",
+   "score": 73,
+   "rationale": "Big market, extreme current spend, and a rare double wedge (price AND trust \u2014 the payment-holds pain is unfixable by a solo founder, which is exactly why v1 should track payments rather than process them). Docked hardest on evidence quality: nearly all quotes are search-snippet-attributed with explicit verification caveats, and a credible quote/calendar/invoice v1 is at the outer edge of a one-month solo build. Re-verify the trades forums before committing."
+  }
+ ],
+ "droppedSummary": "MERGED (absorbed into shortlist entries): QuickBooks x2 \u2192 one; Mailchimp x2 \u2192 one; HoneyBook/Dubsado x4 (smallbiz, saas_reviews, freelancers, events_nonprofits) \u2192 one; Frame.io x2 \u2192 one; trades FSM x3 (subscription creep + billing dark patterns + payment holds, the last kept only as positioning intel since a solo founder can't ship a payment processor) \u2192 one.\n\nKILLED \u2014 constraint violations: Dental insurance eligibility verification (requires paid clearinghouse/payer APIs at runtime \u2014 researcher's own flag); Veterinary PIMS (full records/inventory/labs system far beyond a one-month solo v1, crowded funded cloud-PIMS field); embedded-payment holds as a standalone product (requires being a regulated payments company).\n\nKILLED \u2014 served well by beloved cheap tools: Evernote refugees (Obsidian/Joplin/Apple Notes own local-first notes; differentiation is only an importer); small-team wiki (researcher self-ranked last on differentiation; Outline/BookStack/Wiki.js are good and loved); read-it-later + e-reader pipeline (real orphan pain but wallabag/Readwise/KOReader plus a swarm of post-Pocket entrants; monetizing local-first prosumer readers is notoriously thin); Komoot rescue (weakest emotional evidence per its own researcher; rescue moment is a feature, not a business); Bobby-replacement subscription tracker ($1.99-anchored category, dozens of indie entrants 2025-2026); freelancer invoicing + invoice chasing (validated but hyper-crowded \u2014 Wave/Invoice Ninja/a $39 Show HN already there; core loop absorbed into the creative-CRM pick).\n\nKILLED \u2014 marketplace/network or adoption dependence: Meetup exodus (strong evidence, but value depends on member-side adoption and foundations run RFP-style processes; open-source projects like GatherPress are attacking it for free); multichannel inventory sync (Etsy/eBay app-review lead time blows the one-month window, and oversell bugs create real liability); wedding vendor-confirmation loop (requires 6-12 non-customer vendors to engage per event; evidence was process blogs, not complaints).\n\nKILLED \u2014 weaker composite scores (real pains, ranked 9th+): Fresha salon booking (intense pain and spend, but all key quotes come from one competitor-curated aggregation page, and booking is a crowded flat-fee space \u2014 GlossGenius/Square already fight there); SimplePractice therapist EHR (every quote unverified; HIPAA posture + PHI trust is a heavy lift for a month-old solo product); WebPT reminders/HEP wedge (plausible unbundling play but snippet-only evidence); Eventbrite BYO-Stripe ticketing (good structural wedge, kept as runner-up; Ticket Tailor/Zeffy already occupy adjacent ground); SignUpGenius (simplest build but ~$30-100/yr price ceiling and PTA distribution grind); church volunteer scheduling (all evidence is vendor content marketing, zero first-person coordinator quotes); Typeform/Jotform response caps (Tally/Formbricks already attack it hard); Etsy profit CSV + payout reconciliation (very buildable but vendor-blog evidence and seasonal peaks; Paper+Spark/Craftybase serve it adequately); Etsy variation bulk editor (Vela/Evlista exist \u2014 partially served, researcher's own weakest-underserved flag); Shopify app-cost auditor (two of three evidence items trace to one article); 2-20 unit landlord ledger + maintenance tracker (free incumbents \u2014 Stessa/TurboTenant/Baselane \u2014 are flawed but free, brutal to sell against); security-deposit documentation (decent AB 2801 forcing function, narrowly edged out \u2014 best of the landlord cluster after MTD); rental-application fraud detection (deterministic checks vs AI-generated fakes is an arms race a solo founder loses, plus FCRA-adjacent risk); digital legacy/death binder x2 + aging-parents file (8-year recurrence is impressive, but it's a procrastination category with no purchase trigger and Show HN entrants keep dying in it; no verbatim 'I'd pay' evidence); Centriq home-records vault (fresh betrayal but small niche already flooded with 8+ 'Centriq alternative' products in months); scope-creep ledger (behavior-change product \u2014 the freelancer, not the tool, has to enforce the boundary); tutor payment chasing + cancellation policies + music make-up swaps (genuine evergreen pain, mostly title-level evidence, \u00a315/mo ceiling served adequately by TutorBird/My Music Staff; swap boards need parent-side adoption).",
+ "verified": [
+  {
+   "candidate": {
+    "title": "Google Photos Takeout repair: offline app that fixes broken dates, GPS, and JSON-sidecar chaos",
+    "who": "Prosumers and families de-googling or migrating decades of photos to Immich/Ente/local storage",
+    "pain_description": "Google Takeout rips capture time and geolocation out of photos into loose, language-localized JSON sidecars whose folder layout keeps changing. Entire photo histories import with wrong dates. The main free fixer (GooglePhotosTakeoutHelper) keeps breaking against new export formats, and the $39 commercial fixer is closed-source and machine-locked \u2014 users are literally asking strangers to split the license cost.",
+    "merged_from": [
+     "Google Photos Takeout exodus: broken dates, stripped GPS, and JSON-sidecar chaos"
+    ],
+    "evidence": [
+     {
+      "url": "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/issues/479",
+      "quote": "Anyone interested in sharing the $39 costs for Metadata Fixer?"
+     },
+     {
+      "url": "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/issues/480",
+      "quote": "The Folders have mixed JSON and JPEG files, they are not separated."
+     },
+     {
+      "url": "https://news.ycombinator.com/item?id=39571747",
+      "quote": "Google Takeout downloads the images in full quality. But it splits your metadata..."
+     },
+     {
+      "url": "https://news.ycombinator.com/item?id=45341121",
+      "quote": "Ask HN: Is there no way to incrementally backup from Google photos?"
+     }
+    ],
+    "existing_solutions": "GooglePhotosTakeoutHelper (free CLI, continuously breaking on new export formats \u2014 a dozen fresh GitHub issues Jan\u2013Jul 2026), MetadataFixer.com ($39, closed-source, license-hostile), Ente's importer (only if migrating to Ente), hand-rolled exiftool scripts.",
+    "why_underserved": "The free tool is a volunteer CLI lagging Google's format changes and intimidating non-technical users; the paid tool is opaque enough that people publicly cost-share licenses. Nobody offers a polished, offline, point-at-folder repair app with dry-run preview.",
+    "willingness_to_pay_signal": "Strongest direct WTP in the entire set: a $39 commercial fixer already sells in this exact niche, and users are motivated enough to try splitting licenses. One-time pricing pre-validated.",
+    "score": 84,
+    "rationale": "Best buildability-to-evidence ratio of all 53. Pure offline (exiftool/wasm, zero runtime APIs), shippable by a solo founder well inside a month, pricing model already proven by an inferior competitor, evidence directly verified on GitHub (not snippet-attributed), and the pain regenerates every time Google changes the export format or a new wave de-googles. Main limit is one-time revenue per customer, not demand."
+   },
+   "verification": {
+    "verdict": "REAL_BUT_SERVED",
+    "evidence_check": "3.5 of 4 verified. GitHub #479 VERIFIED via direct fetch: open issue, creator says \"I would love to try the paid Metadata fixer but hoping to share the costs with someone\" \u2014 the license cost-sharing claim is accurate. GitHub #480 VERIFIED: filed Apr 25 2026, \"Not working with new file format\", exact quote present (\"The Folders have mixed JSON and JPEG files, they are not seperated\"). HN 39571747 VERIFIED via search (direct fetch blocked by sandbox proxy, not by HN): real thread titled \"Google Takeout downloads the images in full quality. But it splits your metadata...\" \u2014 contains the pain. HN 45341121 VERIFIED as a real thread (\"Ask HN: Is there no way to incrementally backup from Google photos?\") but it is about incremental backup, not metadata repair, and Google shipped Incremental Takeout for Photos in June 2026, making this evidence item stale/tangential. Bonus verification: GPTH repo confirmed decaying \u2014 65 open issues, fresh breakage reports Jan\u2013Jul 2026 (#480 new format, #482 \"does not find photos\" Jun 13, #484 \"Not finding Videos\" Jul 10).",
+    "competitor_check": "The niche is far more served than the hypothesis admits. (1) MetadataFixer.com, $39 one-time (marked down from $49), Mac/Windows/Linux desktop app, offline, processes Takeout zips directly without extraction, fixes dates+GPS+chronology, lifetime updates, claims 150,000+ users \u2014 this IS the \"polished, offline, point-at-folder repair app\" the hypothesis says nobody offers. Third-party writeups (Medium migration guides) are positive; independent review volume is thin (4 Trustpilot reviews) and its separate Mac App Store variant has poor reviews, but the core product demonstrably works. Its per-computer license is a real grievance (hence the cost-sharing issue) though transfers are allowed via email. (2) immich-go: free, 6.5k GitHub stars, actively maintained (v0.32.0 June 25 2026), intelligently matches Takeout JSON including the shifting supplemental-metadata format, fixes dates from JSON, and can write to a local folder \u2014 it substantially covers the Immich half of the stated target audience, who are the core de-google crowd. (3) Ente's importer covers Ente migrators. (4) Proper Takeout, \u20ac24.99 one-time browser extension, sidesteps Takeout entirely by downloading photos with metadata embedded. (5) A long tail of free CLIs (GoogleTakeoutPhotoFixer, google-photos-metadata-fix, laurentlbm date-fixer, pfilbin90 restorer, exiftool scripts, Porte on Show HN). The only truly unserved slice: a FREE polished GUI \u2014 the one open-source GUI attempt (holmes-software/google-photos-takeout-util, Rust) is pre-release, 7 stars, README says \"It cannot be used at this moment.\"",
+    "demand_check": "Independent evidence the pain exists is abundant and current: Google Photos Community threads on wrong dates after Takeout (multiple, including a 2026-era thread on Takeout omitting JSON for some files), immich discussion #21392 requesting Takeout JSON import, HN threads 34408137 and 42824871 (\"Ask HN: best way to de-Google photos\"), Medium migration guides (Suzan Gregson, Adrian Pascu), and fresh SEO content from competitors dated Apr\u2013May 2026 (IMGLoader, MetadataFixer) indicating ongoing search demand. Willingness to pay is validated but modest: a $39 incumbent with claimed 150k users, and Proper Takeout charging \u20ac24.99 \u2014 but the strongest cited WTP signal (cost-sharing a $39 license) equally proves acute price sensitivity at even $39. Also note Google is slowly improving Takeout (June 2026 incremental exports), which does not fix metadata splitting but shows the pain surface can shrink by fiat.",
+    "fatal_flaws": "1) The core \"why_underserved\" claim is factually wrong: MetadataFixer already is a polished, offline, cross-platform, point-at-zip repair app with one-time pricing and lifetime updates \u2014 the proposed product's only differentiators are price, license terms, open source, and dry-run preview, which is a feature-gap wedge, not an open category. 2) The stated audience is largely self-cannibalized: Immich and Ente migrators (named explicitly in \"who\") have free, actively maintained, format-tracking importers (immich-go at 6.5k stars, updated June 2026), leaving mainly Apple Photos/Lightroom/local-folder migrators. 3) One-shot purchase in an event-driven market where the incumbent has a 5-year head start on the format-quirks corpus (46-char filename truncation, edited-photo suffixes, localized JSON keys, Live Photo pairs) \u2014 matching that reliability is the actual moat, not the UI. 4) Platform risk: Google's June 2026 Takeout improvements show active investment; if Google ever embeds metadata on export (a one-line policy change), the market evaporates overnight.",
+    "confidence": 0.7
+   }
+  },
+  {
+   "candidate": {
+    "title": "Simple client-flow tool for HoneyBook/Dubsado refugees: proposal \u2192 e-sign contract \u2192 invoice, flat price",
+    "who": "Solo photographers, wedding vendors, planners, designers, and other creative client-service freelancers booking ~10-50 clients/year",
+    "pain_description": "HoneyBook raised its entry plan $19\u2192$36/mo in Feb 2025 (~89%, applied to existing users), and Dubsado followed with its own ~60% hike in Dec 2025, leaving the duopoly at price parity. Users say the platforms keep bolting on AI/CRM bloat while the loop they actually need \u2014 send proposal, get contract signed, invoice, schedule \u2014 is tiny. Result: a loud, documented, actively-shopping refugee cohort ('The prices have doubled... makes no sense to me'; '$600 is wildly overpriced for what I am receiving').",
+    "merged_from": [
+     "HoneyBook's ~89% price hike stranded solo creatives who need lightweight client management (contracts + invoices + scheduling)",
+     "Freelancer client-management CRMs (HoneyBook, Dubsado) hit loyal users with up-to-89% overnight price hikes, and the escape options just raised prices too",
+     "Solo-creative CRM price-hike exodus: HoneyBook/Dubsado refugees want a simple, cheap client-flow tool",
+     "HoneyBook's 89% price hike radicalized wedding vendors and creative freelancers against subscription CRMs"
+    ],
+    "evidence": [
+     {
+      "url": "https://www.trustpilot.com/review/honeybook.com",
+      "quote": "The prices have doubled, and so VERY HIGH right now which makes no sense to me."
+     },
+     {
+      "url": "https://www.trustpilot.com/review/honeybook.com",
+      "quote": "almost $600 is wildly overpriced for what I am receiving."
+     },
+     {
+      "url": "https://fstoppers.com/business/honeybooks-price-hike-coming-heres-what-need-know-and-how-save-690584",
+      "quote": "HoneyBook's Price Hike Is Coming: Here's What You Need to Know (and How to Save)"
+     },
+     {
+      "url": "https://taskip.net/honeybook-pricing/",
+      "quote": "HoneyBook Pricing 2026: 89.5% Price Hike - Stay or Switch?"
+     },
+     {
+      "url": "https://prospeo.io/s/honeybook-alternatives",
+      "quote": "I use Pixieset for gallery delivery and website, so I'm just going to cancel HoneyBook and move everything over there."
+     }
+    ],
+    "existing_solutions": "HoneyBook ($36-129/mo post-hike), Dubsado (hiked Dec 2025, notorious setup curve), 17hats, Bonsai, Moxie \u2014 all subscription SaaS trending upmarket; fallback is Google Docs contracts + PayPal invoices + Calendly.",
+    "why_underserved": "Both incumbents repriced within 10 months of each other; every alternative is another VC SaaS whose answer to churn is more features. Nobody sells the boring three-feature loop at $99-149/yr or one-time, with the freelancer's own Stripe/PayPal links for payment (no platform take). Click-to-accept e-sign with audit trail needs no paid API.",
+    "willingness_to_pay_signal": "Users happily paid $19-36/mo ($228-432/yr) and revolted at the increase, not at paying \u2014 they cite $600/yr as 'wildly overpriced', implying $100-200/yr converts. Documented post-hike market-share loss proves they re-shop on price.",
+    "score": 83,
+    "rationale": "Found independently by four of twelve researchers \u2014 the strongest convergence signal in the batch. Fresh, angry, price-anchored cohort created by two dated events (Feb 2025, Dec 2025); ruthlessly scoped v1 (proposal, click-to-sign contract, invoice PDF, booking) is a one-month build with zero runtime APIs. Risk: retention features (client portal polish) take longer, and Trustpilot quotes are snippet-verified only."
+   },
+   "verification": {
+    "verdict": "REAL_BUT_SERVED",
+    "evidence_check": "Direct WebFetch of all cited URLs returned 403 (proxy/bot blocks), so I verified via search snippets and secondary sources. VERIFIED: trustpilot.com/review/honeybook.com contains both exact quotes \u2014 \"The prices have doubled, and so VERY HIGH right now which makes no sense to me\" (5-year customer) and \"almost $600 is wildly overpriced for what I am receiving\" \u2014 confirmed via search snippets across multiple Trustpilot pages. VERIFIED: fstoppers.com article exists with the exact claimed title. VERIFIED: taskip.net/honeybook-pricing/ exists with title \"HoneyBook Pricing 2026: 89.5% Price Hike - Stay or Switch?\". VERIFIED (page exists): prospeo.io \"Best HoneyBook Alternatives in 2026 (After the Price Hike)\"; the specific Pixieset quote not independently confirmed but plausible. The core hike facts check out: Starter $19\u2192$36/mo (+89.5%) Feb 2025, Essentials $39\u2192$59, Premium $79\u2192$125-129. CAVEAT 1: existing HoneyBook members got 20% off new rates for one year, softening the \"applied to existing users\" framing. CAVEAT 2 (material): the Dubsado Dec 2025 hike ($200\u2192$335/yr Starter, $400\u2192$525/yr Premier) applied ONLY to NEW subscriptions \u2014 existing users were fully grandfathered and got the Dubsado 3.0 rebuild free, so Dubsado did NOT \"hit loyal users\" as the merged hypothesis claims; it only raised the price of one escape hatch for HoneyBook refugees.",
+    "competitor_check": "The exact \"boring three-feature loop at low cost\" niche is crowded and actively marketed at this refugee cohort: (1) Bloom.io \u2014 $7/mo annual, photographer-focused CRM with contracts/invoices/galleries, repeatedly named the budget landing spot for post-hike HoneyBook refugees (though it has real complaints: weak support, confusing free-tier limits, 3.7/5 app rating); (2) Pixieset Studio Manager \u2014 FREE tier (unlimited invoices, 3 contracts, e-signatures, booking) and $12/mo annual for unlimited, from a brand photographers already use for galleries \u2014 the hypothesis's own evidence quotes a user defecting to Pixieset; (3) Maroo \u2014 completely free CRM tier for wedding vendors under $10k/mo processing (lead capture, quotes, contracts, invoicing, payments); (4) Moxie \u2014 $10-12/mo Starter with proposals, contracts, invoicing, time tracking, well reviewed by freelancers; (5) Bonsai \u2014 $9/mo annual; (6) AgencyKit \u2014 $9/mo; plus Studio Ninja, 17hats, ThatsTheOne. The 'why_underserved' claim that \"nobody sells the boring loop at $99-149/yr\" is factually false: Bloom ($84/yr), Bonsai ($108/yr), Moxie ($120/yr), Pixieset ($144/yr or free), and Maroo (free) all sit in or below that band today, several purpose-built for this exact vertical. The only genuinely unoccupied angles are one-time pricing and bring-your-own-Stripe/no-platform-take, which are thin moats against free tiers.",
+    "demand_check": "Independent confirmation the pain is real: G2 reviews flag the Feb 2025 hike and card-on-file surcharge as consistent complaints (different source than the cited Trustpilot); an entire SEO cottage industry of \"HoneyBook alternatives after the price hike\" pages sprang up in 2025-2026 (prospeo, maroo, taskip, agiled, hellobonsai, tofu, photocrm.io), which only happens when search demand exists; TikTok discourse (\"Photographers Not Using Honeybook\") and wedding-forum backlash described as \"immediate and well-documented\"; competitors (Maroo, Bloom, AgencyKit) explicitly positioning against the hike proves they see the refugee traffic. Willingness to pay is real but LOW-anchored: the cohort's revealed price point is $0-12/mo (they're landing on free Maroo/Pixieset tiers and $7 Bloom), which undercuts the hypothesis's $99-149/yr wedge \u2014 the refugees are being absorbed, not stranded. No independent evidence found of demand specifically for one-time-purchase or self-hosted client-flow tools in this vertical.",
+    "fatal_flaws": "1) The market has already cleared: the 2025 hike created the refugee cohort 17 months ago (as of July 2026), and a dozen funded/established alternatives ($0-12/mo) have spent that time harvesting it \u2014 a new entrant arrives after the migration wave, not during it. 2) The claimed white space ($99-149/yr for the simple loop) does not exist; Pixieset and Maroo offer FREE tiers covering proposal\u2192e-sign\u2192invoice\u2192booking, and Pixieset has built-in distribution to the exact photographer audience via its gallery product. 3) The Dubsado half of the \"duopoly squeezed loyal users\" narrative is wrong \u2014 existing Dubsado users were grandfathered, so Dubsado is not generating refugees, only slightly pricier for new signups. 4) Price-anchored refugee customers are structurally bad customers: they churn to whoever is cheapest, and the incumbents' free tiers make \"cheapest\" $0. 5) The differentiators left (one-time price, BYO-Stripe) appeal to a payment-processing-averse sliver, while competitors monetize payments to subsidize $0-7 subscriptions \u2014 a flat-price entrant can't match free.",
+    "confidence": 0.8
+   }
+  },
+  {
+   "candidate": {
+    "title": "Local-first, buy-once bookkeeping for QuickBooks Desktop refugees",
+    "who": "Owners of micro-businesses (1-10 staff) force-migrated off perpetual QuickBooks Desktop licenses onto $810-$1,000+/yr subscriptions",
+    "pain_description": "Intuit killed one-time-purchase QuickBooks Desktop and repriced identical basic features (invoices, expenses, reports) as escalating subscriptions \u2014 users cite 48-70% single-year hikes and 20-year loyalty ending in fury on Intuit's own forums. Xero is hiking in parallel. Owners feel gouged by a ~85%-share monopoly whose CPA lock-in keeps them captive, and are openly begging for any non-subscription alternative that just does simple books.",
+    "merged_from": [
+     "Subscription-forced accounting software gouging micro-businesses (QuickBooks/Xero refugees)",
+     "QuickBooks subscription price hikes and forced desktop migration are squeezing small businesses out of their own books"
+    ],
+    "evidence": [
+     {
+      "url": "https://quickbooks.intuit.com/community/other-questions-9/longtime-customer-deeply-disappointed-by-quickbooks-pricing-and-forced-migration-90743",
+      "quote": "now I'm being asked to pay nearly $1,000 per year\u2014a 70% increase\u2014for the same basic features I've used for two decades."
+     },
+     {
+      "url": "https://quickbooks.intuit.com/learn-support/en-us/other-questions/price-increase-2025/00/1546802",
+      "quote": "We just received an emailed stating our annual fee is now $810. Time to look at other options."
+     },
+     {
+      "url": "https://quickbooks.intuit.com/learn-support/en-ca/other-questions/ridiculous-49-subscription-price-increase-for-desktop-2025/00/1536098",
+      "quote": "Ridiculous 49% subscription price increase for Desktop 2025"
+     },
+     {
+      "url": "https://quickbooks.intuit.com/learn-support/en-ca/other-questions/48-price-increase-for-qbx-desktop-for-small-business/00/1533874",
+      "quote": "48% price increase for Qbx desktop for small business | QuickBooks Community"
+     }
+    ],
+    "existing_solutions": "QuickBooks Online (the thing they're fleeing), Xero (~10-12%/yr hikes), Wave (ad/payments-monetized, features removed), FreshBooks (subscription), GnuCash (free/local but accountant-grade UX), spreadsheets. Nothing modern offers buy-once, local-first simple bookkeeping with clean exports for the CPA.",
+    "why_underserved": "Every funded competitor copies the SaaS model because VC economics demand it; the 'simple books, my data, my machine, fair price' segment is structurally abandoned. Clean CSV/report export for the accountant sidesteps the CPA lock-in rather than fighting it.",
+    "willingness_to_pay_signal": "Buyers already budget $500-$1,000+/yr for this category and are explicitly shopping in multi-page forum threads; a $99-199 one-time or low flat fee undercuts spend 5-10x.",
+    "score": 81,
+    "rationale": "Highest pain intensity and cleanest WTP in the set \u2014 multi-page rage threads on the vendor's own forum, verified quotes, recurring with every annual reprice. Docked on buildability: even a narrow ledger+invoicing+CSV-import v1 is the chunkiest one-month build here, and trust/correctness expectations for accounting software are high. The market's size and fury justify the risk."
+   },
+   "verification": {
+    "verdict": "REAL_BUT_SERVED",
+    "evidence_check": "All four cited Intuit forum URLs return HTTP 403 to direct fetch (Intuit bot-blocking), so verification was done via search snippets. VERIFIED: (1) 'Longtime Customer Deeply Disappointed' thread exists with matching content (20-year Desktop Pro user, 70% hike from $589 to ~$1,000/yr) \u2014 though at URL /learn-support/en-us/other-questions/.../00/1559617, not the cited /community/...-90743 path (likely alternate URL formats of the same thread). (2) '$810 price increase 2025' thread confirmed at the exact cited URL, including 'monopoly... gouging customers' comments. (3) 'Ridiculous 49% increase' en-ca thread confirmed at the cited URL via search results. UNVERIFIED: the 48% en-ca thread (not individually confirmed, but consistent with its verified 49% sibling). Bonus corroboration: a fresh 2026 thread 'QuickBooks Desktop 2026 - HUGE price increases now annual - wow' shows the pain recurs annually. Net: pain is genuinely present in cited sources; 3/4 URLs verified.",
+    "competitor_check": "The hypothesis's load-bearing claim \u2014 'Nothing modern offers buy-once, local-first simple bookkeeping' \u2014 is false. (1) Manager.io Desktop Edition: completely FREE, local-first (data on your machine), full double-entry ledger, invoicing, AR/AP, inventory, payroll, reports; ~4.2/5 on G2, praised as simple with a clean interface; its own forum shows QBD-since-2010 refugees migrating to it. (2) Frappe Books: free, open-source, modern Electron+SQLite desktop app with invoicing, payments, financial statements, POS, template builder \u2014 precisely 'modern local-first simple books' and it's $0. (3) NCH Express Accounts: $139 one-time license, free version for businesses under 5 employees. (4) GnuCash: free (the hypothesis dismisses its UX, fairly). (5) AccountEdge: desktop-based but $20/mo subscription. The real residual gaps are (a) clean QuickBooks Desktop data import \u2014 none of these handle Intuit's proprietary format well (Manager forum confirms no direct QB import), and (b) discoverability \u2014 Forbes/NerdWallet/FitSmallBusiness roundups claim one-time options are 'extremely limited' while barely mentioning Manager/Frappe. That's a marketing/migration-tooling gap, not an absent product category.",
+    "demand_check": "Independent evidence the pain exists: Manager.io forum migration threads from QBD users, GnuCash mailing-list threads on QB migration, iFeeltech/inFlow migration guides citing ~400% Desktop cost increases 2023-2025, and a fresh 2026 Intuit forum rage thread about Desktop 2026 pricing. Demand to LEAVE QuickBooks is real and independently corroborated; but refugees observably flow to free options, and no independent evidence was found of users paying $99-199 for a new-entrant one-time ledger.",
+    "fatal_flaws": "1) Competing against free: Manager.io and Frappe Books already deliver local-first, no-subscription, simple double-entry books at $0; a $99-199 paid v1 must beat free on trust, and in accounting software trust accrues to products with a decade of track record, not one-month builds. 2) The genuinely underserved wedge is QuickBooks Desktop data migration (proprietary QBW/IIF import), which is the hardest engineering problem in the space and explicitly outside the proposed narrow ledger+CSV v1. 3) The segment is adversely selected on price sensitivity \u2014 people furious about $810/yr are the least likely to pay anything when free alternatives exist one search away. 4) Correctness/tax/payroll expectations for business books are high; errors are existential for a new entrant. The defensible version of this idea is migration tooling + polish + support layered on the pain, not the core ledger the hypothesis proposes.",
+    "confidence": 0.75
+   }
+  },
+  {
+   "candidate": {
+    "title": "Flat-price newsletter tool with BYO-SMTP/SES where unsubscribed contacts cost nothing",
+    "who": "Small business owners, authors, creators, and nonprofits running 250-20k-contact newsletters on Mailchimp",
+    "pain_description": "Mailchimp bills for unsubscribed, cleaned, and non-subscribed contacts \u2014 senders pay monthly for people they are legally forbidden to email unless they manually archive them, with long-tenured lists carrying 20-40% dead weight. Intuit then gutted the free plan repeatedly through Dec 2025 (250 contacts / 500 sends, automations removed), shoving tiny senders onto $45-60+/mo tiers. Trustpilot: 2.7/5 across 1,368 reviews.",
+    "merged_from": [
+     "Mailchimp billing for unsubscribed contacts plus 2025 free-plan gutting is bleeding small senders",
+     "Email marketing tools bill for dead weight: Mailchimp charges for unsubscribed contacts and keeps hiking prices while shrinking the free tier"
+    ],
+    "evidence": [
+     {
+      "url": "https://www.productiveblogging.com/unsubscribed-contacts-mailchimp/",
+      "quote": "count unsubscribers as well as subscribers in the total number of contacts (or 'audience' as Mailchimp calls it)... you still have to pay!"
+     },
+     {
+      "url": "https://saasprices.net/blog/mailchimp-nerfed-free-plan",
+      "quote": "Mailchimp Drastically Reduces Free Plan Limits"
+     },
+     {
+      "url": "https://5forests.com/tired-of-paying-for-non-subscribers-in-mailchimp-us-too/",
+      "quote": "Tired of paying for non-subscribers in Mailchimp? Us too."
+     },
+     {
+      "url": "https://digitalsproductivity.com/is-mailchimp-overpriced-in-2026-247-users-share-real-costs/",
+      "quote": "Is Mailchimp Overpriced in 2026? 247 Users Share Real Costs - DigitalEdgeLab"
+     }
+    ],
+    "existing_solutions": "Mailchimp/Constant Contact/AWeber (per-contact billing is the pain), MailerLite/Brevo/EmailOctopus (cheaper, same treadmill), listmonk/Mautic (free self-hosted but Docker/Postgres/DNS sysadmin-grade). Standard 'fix' is a recurring manual archive-unsubscribers chore before each billing date.",
+    "why_underserved": "Every hosted ESP monetizes per stored contact, so no incumbent will fix the incentive; the self-hosted escape hatches filter out exactly the non-technical owners who complain loudest. A dead-simple flat-price app with bring-your-own SMTP/SES, where unsubscribed contacts cost nothing by design, is structurally off-limits to incumbents.",
+    "willingness_to_pay_signal": "Users pay $45-300+/mo and can quantify the waste ($180+/yr on unsubscribed-contact billing alone); one analysis found 418 users publicly leaving Mailchimp Nov 2025-Feb 2026. Single-digit monthly or flat pricing is an easy calculation.",
+    "score": 79,
+    "rationale": "Found by two researchers independently; the Dec 2025 free-plan cut re-ignited the complaint wave, so timing is hot. BYO sending credentials means zero paid APIs for the founder. Docked slightly on buildability nuance: deliverability hand-holding (DNS, warmup) is real support burden, and 'help non-technical users configure SES' is the hidden hard part. Still a clear structural wedge no incumbent can copy."
+   },
+   "verification": {
+    "verdict": "REAL_BUT_SERVED",
+    "evidence_check": "Direct fetches of all 4 cited URLs were blocked by the sandbox proxy (403 CONNECT denials), so each was verified via web search instead. (1) productiveblogging.com/unsubscribed-contacts-mailchimp/ \u2014 VERIFIED: real page, teaches archiving unsubscribed contacts to stop paying for them; pain matches. (2) saasprices.net free-plan-nerf post \u2014 could not load directly, but the underlying claim is independently corroborated by beehiiv.com, emailexpert.com, and groupmail.io: free plan cut to 250 contacts/500 sends (sources date the final cut to Jan 2026, not Dec 2025 \u2014 minor discrepancy), classic automations removed from free plan June 2025. (3) 5forests.com 'Tired of paying for non-subscribers' \u2014 VERIFIED: real agency post about winery clients paying for non-subscribed contacts. (4) digitalsproductivity.com '247 Users Share Real Costs' \u2014 page exists and contains the claimed content, but it is a low-credibility AI-content-farm-style site (title says 'DigitalEdgeLab' on a domain called digitalsproductivity.com; the '247 threads / 1,847 responses' methodology is unverifiable). The '418 users publicly leaving Nov 2025\u2013Feb 2026' WTP figure in the hypothesis traces to this dubious source and should not be trusted. Net: the core pain (Mailchimp bills for unsubscribed/non-subscribed contacts; free plan repeatedly gutted) is real and well-documented, including in Mailchimp's own help docs.",
+    "competitor_check": "This is where the hypothesis collapses. The claim that 'every hosted ESP monetizes per stored contact, so no incumbent will fix the incentive' is factually false: (a) MailerLite \u2014 hosted, well-loved (4.6+ ratings), free to 500 subs/12k emails, ~$10/mo at 1k subs, and unsubscribed/bounced contacts explicitly do NOT count toward billing (confirmed in MailerLite's own billing docs). (b) EmailOctopus \u2014 hosted, cheap, unsubscribed contacts do NOT count toward the plan limit (confirmed in their help docs). (c) Brevo \u2014 no per-contact billing at all: unlimited contacts, pay per email sent, from $9/mo for 5k emails; comparison articles cite 25k-contact Mailchimp users cutting $170/mo to $29/mo. (d) Kit (ConvertKit) \u2014 FREE up to 10,000 subscribers with unlimited sends, which single-handedly covers most of the hypothesized 250\u201320k segment. (e) beehiiv \u2014 free to 2,500 subscribers, purpose-built for newsletters/creators. (f) The exact hypothesized product already exists hosted: MailBluster \u2014 cloud-hosted, BYO Amazon SES/Postmark/Mailgun/SMTP2GO, unlimited contacts at no extra charge, free starter tier, Pro at $5/mo ($60/yr) + $0.60/1,000 emails. BigMailer is another hosted BYO-SES player (free under 1,000 contacts, ~$20/mo to 20k). (g) Sendy \u2014 $69 one-time self-hosted BYO-SES, hugely popular with the semi-technical. The 'structurally off-limits to incumbents' wedge does not exist; unsubscribed-cost-nothing billing is already mainstream outside Mailchimp.",
+    "demand_check": "Independent evidence that the PAIN is real is abundant: Mailchimp's own docs confirm subscribed/unsubscribed/non-subscribed all count toward billing; emailtooltester, retainful, justpricing, benchmarkemail, sendx, and emailvendorselection all flag it as a hidden cost in 2026; one 2026 analysis of r/MailChimp states the unsubscribed-contact mechanic is 'the most common reason established businesses switch platforms'; beehiiv and emailexpert independently covered the free-plan shrink to 250 contacts. However, the demand expresses itself as 'leave Mailchimp for an existing cheaper tool' \u2014 documented switch destinations are MailerLite ('cut costs 60%'), Brevo, EmailOctopus, and Kit \u2014 NOT as unmet demand for a new flat-price BYO-SES app. Evidence of willingness to pay for the specific hypothesized product is weak: MailBluster already sells nearly exactly this for $5/mo and remains a niche player, suggesting BYO-SES setup (AWS account, sandbox exit, DNS/DKIM) is a real adoption barrier for the non-technical audience the hypothesis targets \u2014 the same barrier the hypothesis itself flags as the 'hidden hard part'.",
+    "fatal_flaws": "1) The core 'why_underserved' premise is refuted: MailerLite and EmailOctopus don't bill for unsubscribed contacts, and Brevo/MailBluster don't bill per contact at all \u2014 hosted incumbents HAVE fixed the incentive. 2) Kit's free 10,000-subscriber tier and beehiiv's free 2,500 tier blanket the exact 250\u201320k creator/author/nonprofit segment at $0. 3) The hypothesized product already exists (MailBluster $5/mo hosted BYO-SES unlimited contacts; BigMailer; Sendy $69 one-time), and none has broken out \u2014 the target user who can't self-host listmonk also can't comfortably exit the AWS SES sandbox, so the BYO-SES design filters out its own market. 4) The strongest quantified WTP datapoint (418 public leavers, '247 users' survey) comes from an unverifiable AI-content-farm source. 5) The remaining differentiation vs MailerLite/Brevo is a few dollars a month, against their brand trust, deliverability reputation, and free migration tooling.",
+    "confidence": 0.85
+   }
+  },
+  {
+   "candidate": {
+    "title": "UK landlord Making Tax Digital record-keeper: keep your spreadsheet workflow, file quarterly to HMRC",
+    "who": "UK private landlords with >\u00a350k rental income (~900k people mandated since April 2026; the >\u00a330k wave hits April 2027), mostly self-managing 1-10 properties from Excel",
+    "pain_description": "Since April 2026 these landlords must keep digital records and file quarterly HMRC updates; spreadsheets are only legal with fiddly 'digital link' bridging software. July 2026 surveys show ~13 hours/month on tax admin, 22% considering quitting the rental market over the burden, 59% fearing penalties, and the alternatives are \u00a3300-800/yr extra accountant fees or subscription SaaS that takes custody of their data.",
+    "merged_from": [
+     "UK landlords forced off spreadsheets by Making Tax Digital (mandatory since April 2026) with quarterly filings they hate and software they distrust"
+    ],
+    "evidence": [
+     {
+      "url": "https://bdcmagazine.com/2026/07/almost-a-quarter-of-landlords-ready-to-quit-the-rental-market-over-making-tax-digital-burden/",
+      "quote": "Almost a quarter of landlords ready to quit the rental market over Making Tax Digital burden"
+     },
+     {
+      "url": "https://www.lettingagenttoday.co.uk/breaking-news/2026/07/growing-role-for-agents-as-landlords-struggle-with-making-tax-digital/",
+      "quote": "Landlords now spend an average of 13 hours a month \u2013 more than a day and a half of work \u2013 managing tax and financial admin."
+     },
+     {
+      "url": "https://anna.money/blog/guides/making-tax-digital-costs/",
+      "quote": "businesses moving to MTD will incur around \u00a3280 to \u00a3350 in transitional costs, along with ongoing annual costs of around \u00a3115"
+     }
+    ],
+    "existing_solutions": "Accountants (\u00a3300-800/yr extra for quarterly support), Landlord Studio/Hammock/Landlord Vision (cloud subscriptions holding the data), Xero/QuickBooks (overkill, not per-property), clunky VAT-era bridging retrofits. 39% still on spreadsheets/manual methods.",
+    "why_underserved": "Incumbent MTD tools demand data custody; landlords explicitly want to keep their own records. A landlord-native, local-first record keeper with per-property income categorisation plus HMRC quarterly submission (the MTD Income Tax API is free \u2014 developer registration, not a paid API) is a thin, well-defined wedge. Timing is exceptional: mandation began 3 months ago, next wave April 2027 grows the market.",
+    "willingness_to_pay_signal": "Landlords value the admin time at \u00a33,000+/yr, face \u00a3280-350 transitional costs and \u00a3300-800/yr accountant quotes; dozens of paid tools on HMRC's recognised-software list validate the budget. \u00a350-150/yr undercuts everything.",
+    "score": 78,
+    "rationale": "The only candidate with a government-enforced forcing function \u2014 demand is compulsory, dated, and expanding. Free API, clear buyer, evergreen quarterly recurrence. Docked for: crowded HMRC-recognised list (validated but contested), HMRC recognition/integration process eating into the one-month window, and tax-domain correctness stakes. Evidence is trade-press/survey rather than raw first-person rants."
+   },
+   "verification": {
+    "verdict": "REAL_BUT_SERVED",
+    "evidence_check": "Direct fetches of all three cited URLs were blocked by the sandbox proxy (403 CONNECT denial at the gateway, affecting all external hosts including example.com \u2014 a tooling limitation, not evidence the pages are dead). Verified indirectly via web search instead: (1) bdcmagazine.com article exists with the exact cited title and its content is corroborated \u2014 a Landlord Studio study claims 22% of landlords have considered leaving the rental market over MTD burden. (2) lettingagenttoday.co.uk article exists; the '13 hours a month \u2014 more than a day and a half of work \u2014 managing tax and financial admin' quote appears verbatim in search results, plus \u00a33,000/yr time valuation and 36% fearing errors/penalties (the hypothesis's '59% fearing penalties' did not surface; closest verified figure is 36-38% for record-keeping/penalty concerns). (3) anna.money page exists and its \u00a3280-350 transitional / ~\u00a3115 ongoing figures match HMRC's own published estimates (\u00a3285 transitional/\u00a3115 ongoing for >\u00a350k landlords; \u00a3350/\u00a3110 for the \u00a330-50k band, per gov.uk). MAJOR CAVEAT: the headline pain stats (22% quitting, 13 hrs/month) come from a survey by Landlord Studio \u2014 a vendor selling landlord accounting software with an obvious interest in dramatizing the pain. Also, MTD-for-ITSA mandation from April 2026 (>\u00a350k) and April 2027 (>\u00a330k) is confirmed real via gov.uk and LITRG.",
+    "competitor_check": "The exact proposed wedge \u2014 'keep your spreadsheet workflow, file quarterly to HMRC' \u2014 is the literal definition of MTD bridging software, an established and well-loved category with live Income Tax products in 2026: 123 Sheets (\u00a319.50+VAT/yr, FIVE-STAR average across 1,900+ Trustpilot reviews, has a dedicated landlords product page), VitalTax (\u00a330-36/yr Excel add-in, 4.0 Trustpilot, HMRC-recognised for ITSA quarterly updates, adjustments and final declaration), GoFile (\u00a349.99+VAT/yr for self-employment + property). The 'clunky VAT-era retrofits' framing in the hypothesis is outdated \u2014 these have purpose-built ITSA offerings. On top of that, HMRC's recognised list has 20+ genuinely FREE options including landlord-specific ones: RentalBux Free (all three MTD income types, free until March 2028), QuickFile (free to 1,000 ledger entries), Clear Books Free, TaxNav, FreeAgent (free via NatWest/Mettle banking). Landlord-native SaaS: Landlord Studio GO is FREE for the first 3 units (covering much of the '1-10 property' target), Hammock \u00a38/mo (1-3 properties), Landlord Vision. The proposed \u00a350-150/yr price sits ABOVE the segment's actual clearing price of \u00a30-36/yr. The 'data custody / local-first' differentiator is hollow: with bridging software the landlord's own spreadsheet IS the digital record and stays on their machine \u2014 custody already stays with the landlord.",
+    "demand_check": "Independent evidence the pain is real: LandlordZone reports 'nearly 9 in 10 landlords anxious over digital tax shake-up' (separate from the cited articles); an OpenRent community forum thread 'Making Tax Digital from April 2026 \u2014 how are you preparing?' shows organic landlord discussion; Blick Rothenberg and LITRG document rising compliance risk, the points-based penalty regime (\u00a3200 fine at 2 points), and confusion about what digital record-keeping means; Parliament's Public Accounts Committee has criticized MTD's cost burden on taxpayers. Willingness to pay is confirmed but LOW-PRICED: HMRC itself estimates only ~\u00a3115/yr ongoing cost per mandated landlord, the most popular spreadsheet-bridging tools charge \u00a320-36/yr, and multiple credible free options exist \u2014 so the compulsory demand is real, but the market has already priced this job at roughly a quarter to zero of the hypothesis's \u00a350-150/yr target.",
+    "fatal_flaws": "1) The 'underserved wedge' is a mischaracterization: spreadsheet-preserving MTD filing is a mature category (bridging software) with a 5-star, \u00a319.50/yr incumbent (123 Sheets) and 20+ free HMRC-recognised alternatives \u2014 the hypothesis's own differentiators (keep your data, keep your spreadsheet, thin filing layer) are exactly what these deliver today. 2) Pricing is inverted: \u00a350-150/yr does not 'undercut everything'; it is 2-5x the going rate for the target segment and infinitely more than the free tiers (Landlord Studio GO free for 3 units, RentalBux free to 2028). 3) The most dramatic evidence (22% quitting, 13 hrs/month) is a competitor vendor's marketing survey, not neutral data. 4) HMRC recognition is a gating process that must complete before a single sale, in a market where 40+ products are already listed and search/SEO channels are saturated by incumbents and affiliate listicles. The pain is genuine and government-enforced, but the specific gap this startup claims to fill closed before it opened.",
+    "confidence": 0.85
+   }
+  },
+  {
+   "candidate": {
+    "title": "Drag-and-drop DMARC report reader: human-readable dashboards without enterprise SaaS or an ELK stack",
+    "who": "Small-business IT admins, agencies managing many client domains, indie SaaS founders and self-hosters forced into DMARC by the Feb-2024 Google/Yahoo bulk-sender mandates",
+    "pain_description": "DMARC aggregate reports arrive daily as gzipped XML nobody can read. Options are pricey per-domain SaaS (dmarcian, Valimail) that sees all your mail metadata, or parsedmarc dragging in Elasticsearch/Kibana with documented multi-GB memory problems \u2014 for a few MB of XML. Most small domain owners just ignore the reports and lose spoofing/deliverability visibility; understanding DMARC at all 'almost broke' people.",
+    "merged_from": [
+     "DMARC report monitoring without an enterprise SaaS or an Elasticsearch stack"
+    ],
+    "evidence": [
+     {
+      "url": "https://news.ycombinator.com/item?id=38936316",
+      "quote": "Is there any service that can process DMARC report e-mails? Those mails with zip..."
+     },
+     {
+      "url": "https://github.com/domainaware/parsedmarc/issues/533",
+      "quote": "I noticed a memory consumption problem to process a large volume of emails (98000)."
+     },
+     {
+      "url": "https://news.ycombinator.com/item?id=39712634",
+      "quote": "I figured out how DMARC works, and it almost broke me"
+     },
+     {
+      "url": "https://news.ycombinator.com/item?id=45822916",
+      "quote": "Show HN: DMARC report parser as a single Go binary (SQLite, no Elasticsearch)"
+     }
+    ],
+    "existing_solutions": "dmarcian/Valimail/Postmark DMARC (per-domain subscription SaaS, third party reads mail metadata); parsedmarc + full ELK stack (free but heavyweight, memory-hungry); ignoring the reports (the default).",
+    "why_underserved": "The 2024 mandates massively expanded who must run DMARC, but tooling still assumes enterprise budget or devops appetite. A Nov-2025 Show HN whose entire pitch was 'single binary, no Elasticsearch' proves the lightweight middle is still open \u2014 especially a fully client-side reader agencies can trust with client metadata (drag-drop zips, parse in browser, zero runtime APIs).",
+    "willingness_to_pay_signal": "Incumbents charge monthly per-domain fees and are repeatedly recommended in threads \u2014 businesses already pay. Agencies managing many client domains are the concentrated, multi-domain buyer.",
+    "score": 76,
+    "rationale": "Cleanest technical build in the set (pure client-side XML parsing, genuinely zero infrastructure) with a regulatory tailwind and recurrence across 6+ independent HN threads 2024-2026 plus direct GitHub verification. Docked because pain intensity is annoyance-grade rather than rage-grade, the single-binary Show HN shows competition arriving in the exact gap, and solo self-hosters expect free \u2014 the paying wedge (agencies) needs deliberate targeting."
+   },
+   "verification": null
+  },
+  {
+   "candidate": {
+    "title": "Self-hosted client video review: timestamped comments, no-login approval links, and NLE marker export (Frame.io escape)",
+    "who": "Freelance video editors, videographers, and 1-5 person production studios who need clients to leave frame-accurate comments and approve cuts",
+    "pain_description": "Post-Adobe Frame.io is per-seat, storage-capped, and enterprise-priced for what a solo editor needs ('hard to justify... especially after having some clients not even use the system'). Small shops are already fleeing to months-old self-hosted projects (ViTransfer, FreeFrame) on their own NAS hardware, then filing issues describing the residual pain: juggling WeTransfer for inbound footage and hand-retyping every timecoded comment back into Resolve/Premiere because nothing exports review notes as NLE markers.",
+    "merged_from": [
+     "Frame.io priced out freelance video editors: client review/approval costs enterprise money for a simple job",
+     "Freelance video editors and small agencies want self-hosted client review instead of per-seat Frame.io subscriptions"
+    ],
+    "evidence": [
+     {
+      "url": "https://github.com/MansiVisuals/ViTransfer/issues/25",
+      "quote": "First off, thanks for this awesome self-hosted tool \u2013 it's a great Frame.io alternative and runs smoothly on my TrueNAS setup. I'm using it for my video production agency..."
+     },
+     {
+      "url": "https://github.com/Techiebutler/freeframe/issues/84",
+      "quote": "Review feedback (timecoded comments) currently has to be read manually and matched back to timecodes by hand in the NLE. For larger projects with many comments this is slow and error-prone."
+     },
+     {
+      "url": "https://www.capterra.com/p/148214/Frame-io/reviews/",
+      "quote": "Frame.io's cost can be difficult to accept, especially after having some clients not even use the system."
+     },
+     {
+      "url": "https://www.g2.com/products/frame-io/reviews",
+      "quote": "One thing I feel Frame.io could improve is the pricing, especially for freelancers or small creative teams."
+     }
+    ],
+    "existing_solutions": "Frame.io (Adobe, $15-25+/seat/mo, cloud custody of footage), Vimeo Review (Bending Spoons-owned \u2014 same squeeze fear), Dropbox Replay, and young self-hosted upstarts (ViTransfer, FreeFrame) users praise but which lack client uploads, marker export, and polish. Fallback: WeTransfer + clients emailing '2:31 the music is weird' with wrong timestamps.",
+    "why_underserved": "All incumbents are per-seat cloud subscriptions from acquirers video pros distrust; the self-hosted upstarts are months old and missing exactly the features users file issues about. A focused v1 \u2014 upload cut, password link, client comments frame-accurately with no account, editor exports EDL/FCPXML markers \u2014 is well-scoped and needs no paid APIs (HTML5 playback; bundled ffmpeg later).",
+    "willingness_to_pay_signal": "Working businesses with client deliverables: they pay Frame.io seat fees today and buy TrueNAS hardware to escape; the agency user in evidence offers to beta test. Money is demonstrably in the workflow.",
+    "score": 75,
+    "rationale": "Two researchers converged, and the GitHub evidence is firsthand professionals describing their own production workflow (verified verbatim \u2014 rare in this batch). The NLE round-trip is a concrete, ownable differentiator neither upstart has shipped. Docked because the free self-hosted projects could close the gap quickly and video handling (storage, transcode support burden) makes the month tight; strict v1 scoping (H.264-only uploads) is mandatory."
+   },
+   "verification": null
+  },
+  {
+   "candidate": {
+    "title": "Flat-price, own-your-data job tool for 1-5 person trade crews: quote \u2192 schedule \u2192 invoice, no seat fees, no lock-in",
+    "who": "Owner-operators and micro-crews in lawn care, cleaning, plumbing, HVAC, electrical, and handyman work paying Jobber/Housecall Pro $149-400+/mo after add-on and seat creep",
+    "pain_description": "Field-service platforms advertise $39-59/mo, then gate the needed basics (second seat, QuickBooks sync, estimates) behind tiers and add-ons until real bills hit $149-400+/mo (~$10k/yr for a 10-person shop). On top of the cost creep, trust is destroyed: Jobber holds a BBB F rating with reports of $424-$1,700 no-refund charges, billing after confirmed cancellation, and imports that silently deleted client data. Owners explicitly say they hate ongoing fees and want something simple they own.",
+    "merged_from": [
+     "Seat-and-add-on subscription creep in field-service software crushes 1-5 person trade crews",
+     "No-refund annual billing, charge-after-cancel, and data-loss dark patterns have destroyed trust in field-service SaaS",
+     "Embedded payment processors freeze contractors' money for days-to-weeks with no explanation"
+    ],
+    "evidence": [
+     {
+      "url": "https://www.trustpilot.com/review/housecallpro.com",
+      "quote": "This company was nickel and diming my company per invoice, per ticket, per whatever else."
+     },
+     {
+      "url": "https://www.lawnsite.com/threads/scheduling-software.386821/page-2",
+      "quote": "I hate paying monthly fee's or ongoing fee's"
+     },
+     {
+      "url": "https://www.bbb.org/ca/ab/edmonton/profile/computer-software/jobber-0017-214334/customer-reviews",
+      "quote": "Jobber | BBB Reviews | Better Business Bureau (F rating; all customer reviews 1-star as of early 2026)"
+     },
+     {
+      "url": "https://myquoteiq.com/jobber-reviews/",
+      "quote": "This company has gone downhill for sometime."
+     },
+     {
+      "url": "https://www.trustpilot.com/review/housecallpro.com",
+      "quote": "literally every credit card payment or finance payment that we accept gets held up"
+     }
+    ],
+    "existing_solutions": "Jobber ($39-200+/mo, +$29/extra user), Housecall Pro ($59 entry lacking QuickBooks sync and a second seat; realistic $149-300+/mo), ServiceTitan ($245-500/tech/mo, $5K-50K implementation). All per-seat cloud subscriptions; none offer buy-once or self-hosted, and their embedded payments freeze contractors' money for days-to-weeks.",
+    "why_underserved": "The category consolidated on VC per-seat SaaS whose model requires expanding ARPU; the huge long tail of 1-5 person crews wanting flat-price quote/calendar/invoice/customer-history is deliberately unserved (free tiers hobbled to force upgrades). The trust collapse (no-refund billing, data loss, payment holds) hands a challenger a ready-made positioning wedge: local data, one-click export, no embedded payments \u2014 'nobody holds your money.'",
+    "willingness_to_pay_signal": "Owners resentfully pay $1,200-10,000/yr today; competitor marketing claims 10,000+ contractors switching over price alone. $10-30/mo flat or ~$200 one-time is trivially below current spend, and avoiding a single $424-1,700 refund-denial incident pays for years.",
+    "score": 73,
+    "rationale": "Big market, extreme current spend, and a rare double wedge (price AND trust \u2014 the payment-holds pain is unfixable by a solo founder, which is exactly why v1 should track payments rather than process them). Docked hardest on evidence quality: nearly all quotes are search-snippet-attributed with explicit verification caveats, and a credible quote/calendar/invoice v1 is at the outer edge of a one-month solo build. Re-verify the trades forums before committing."
+   },
+   "verification": null
+  }
+ ]
+}
