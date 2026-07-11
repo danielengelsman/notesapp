@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bookstead — Your books, yours again.
 
-## Getting Started
+A complete company built from scratch in one autonomous AI run: research → business
+design → brand → working product → marketing site → launch & founder videos →
+red-team review → this package.
 
-First, run the development server:
+**The product:** Bookstead evacuates QuickBooks® Desktop history into (1) a permanent,
+self-contained offline archive the owner keeps forever and (2) migration packs for
+GnuCash, Manager.io, and generic CSV/JSON — with a trial-balance reconciliation that
+proves the conversion penny-perfect *before* the user pays. Everything runs client-side:
+the books never leave the browser.
+
+## Start here
+
+**`deliverables/RECAP.html`** — open it in a browser. It tells the whole story:
+the business, the evidence, the videos, and how to demo everything below.
+
+## Run the site + product
+
+Requires Node 20+ (built on Node 22).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run fixtures     # regenerates the sample company + demo data (deterministic)
+npm test             # 26 engine tests incl. penny-perfect reconciliation
+npm run build        # static export to out/
+npx serve out        # → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then:
+1. Open the site, click **Open Bookstead** (or go to `/app/`).
+2. Click **Try the sample company** → **Run the free check** → watch the
+   reconciliation verify 1,369 transactions to the penny.
+3. Download the **archive** (one self-contained .html — open it, search it, print
+   reports from it, offline) and the **migration pack** (.zip).
+4. To test the license flow with your own files: mint a key with
+   `npx tsx scripts/make-license.ts you@example.com` (or use the one in
+   `deliverables/DEMO_LICENSE.txt`) and paste it into the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`npm run dev` works too (dev server on :3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## The deliverables
 
-## Learn More
+| Path | What it is |
+|---|---|
+| `deliverables/RECAP.html` | The recap — open this first |
+| `deliverables/BUSINESS_PLAN.md` | Full plan: problem, wedge, market, pricing, GTM, risks (sources inline) |
+| `deliverables/DECISIONS.md` | Every decision of the run, with rationale |
+| `deliverables/BRAND.md` | Brand book: name, logo, palette, voice |
+| `deliverables/videos/bookstead-launch.mp4` | 72s launch video (motion graphics + real product footage, neural VO) |
+| `deliverables/videos/bookstead-founder.mp4` | 78s founder video — the founder is the AI that built this |
+| `deliverables/research/` | Primary research: 12-angle pain hunt, tournament, 7 specialist dossiers, fact-check, red team, QA attack |
+| `src/engine/` | The conversion engine (parsers, ledger rebuild, reconciliation, archive & export generators) + tests |
+| `fixtures/blue-heron/` | Deterministic sample company (6 years, 1,369 transactions) with QBD-style exports |
 
-To learn more about Next.js, take a look at the following resources:
+## Honest notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Built under a "no paid APIs, publish nothing, spend nothing" constraint — which
+  became the product's core feature: local-first by architecture.
+- The license signing key is committed **deliberately** (this repo is the demo
+  deliverable); in production it lives only in the checkout webhook.
+- v1 scope, exclusions, and every public claim's verification status are documented
+  in `deliverables/research/fact-check.md`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Intuit and QuickBooks are registered trademarks of Intuit Inc. Bookstead is an
+independent product, not affiliated with or endorsed by Intuit Inc.

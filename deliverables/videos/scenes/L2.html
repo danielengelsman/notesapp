@@ -1,17 +1,18 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
 body { background: var(--paper); }
 h1 { font-size:40px; color:var(--ink); margin-bottom:40px; opacity:0; animation: fadein .7s ease-out .3s forwards; }
-.chart { display:flex; align-items:flex-end; gap:56px; height:330px; }
+.chart { display:flex; align-items:flex-end; gap:44px; height:330px; }
 .bar { width:130px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; }
 .col { width:100%; background:linear-gradient(180deg, var(--copper), #A05F1B); border-radius:8px 8px 0 0;
   height:0; }
 .b1 .col { animation: grow1 .8s ease-out 1.2s forwards; } @keyframes grow1 { to { height:86px; } }
 .b2 .col { animation: grow2 .8s ease-out 2.0s forwards; } @keyframes grow2 { to { height:136px; } }
 .b3 .col { animation: grow3 .8s ease-out 2.8s forwards; } @keyframes grow3 { to { height:248px; } }
-.b4 .col { animation: grow4 .8s ease-out 3.6s forwards; background:linear-gradient(180deg, var(--red), #7E241A); } @keyframes grow4 { to { height:262px; } }
+.b4 .col { animation: grow4 .8s ease-out 3.6s forwards; } @keyframes grow4 { to { height:262px; } }
+.b5 .col { animation: grow5 .8s ease-out 4.4s forwards; background:linear-gradient(180deg, var(--red), #7E241A); } @keyframes grow5 { to { height:287px; } }
 .amt { font-weight:800; font-size:24px; color:var(--ink); margin-bottom:8px; opacity:0; }
 .b1 .amt { animation: fadeonly .4s 1.7s forwards; } .b2 .amt { animation: fadeonly .4s 2.5s forwards; }
-.b3 .amt { animation: fadeonly .4s 3.3s forwards; } .b4 .amt { animation: fadeonly .4s 4.1s forwards; }
+.b3 .amt { animation: fadeonly .4s 3.3s forwards; } .b4 .amt { animation: fadeonly .4s 4.1s forwards; } .b5 .amt { animation: fadeonly .4s 4.9s forwards; }
 .yr { margin-top:10px; color:var(--slate); font-weight:600; }
 .doom { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:26px;
   background:rgba(20,31,25,.94); opacity:0; animation: fadeonly .7s ease 7.2s forwards; }
@@ -28,6 +29,7 @@ h1 { font-size:40px; color:var(--ink); margin-bottom:40px; opacity:0; animation:
     <div class="bar b2"><div class="amt">$549</div><div class="col"></div><div class="yr">2023</div></div>
     <div class="bar b3"><div class="amt">$999</div><div class="col"></div><div class="yr">2024</div></div>
     <div class="bar b4"><div class="amt">$1,049</div><div class="col"></div><div class="yr">2025</div></div>
+    <div class="bar b5"><div class="amt">$1,149</div><div class="col"></div><div class="yr">2026</div></div>
   </div>
 </div>
 <div class="doom">

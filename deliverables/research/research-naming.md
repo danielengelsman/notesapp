@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Naming & Collision Check — "Ledgerlift" and Alternatives
 Date: 2026-07-11. Product: client-side QuickBooks Desktop escape tool — permanent offline archive + migration packs. Themes: escape, ownership, proof, permanence ("your books, yours again").
 

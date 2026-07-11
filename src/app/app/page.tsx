@@ -63,15 +63,26 @@ export default function App() {
     if (saved) verifyLicense(saved).then((l) => { if (l) { setLicense(l); setLicenseKey(saved); } });
   }, []);
 
+  // "empty" | "demo" | "user" — tracked explicitly so demo sample data can
+  // never merge into a real company's output, and so the demo download unlock
+  // can't be forced by loading the bundled sample file as your own.
+  const [mode, setMode] = useState<"empty" | "demo" | "user">("empty");
+
   const addFiles = useCallback(async (list: FileList | File[]) => {
     const loaded: LoadedFile[] = [];
     for (const f of Array.from(list)) {
       const text = await f.text();
       loaded.push({ name: f.name, text, kind: classify(f.name, text) });
     }
-    setFiles((prev) => [...prev.filter((p) => !loaded.some((l) => l.name === p.name)), ...loaded]);
+    // Adding your own files always switches to user mode and discards any
+    // previously loaded demo files (never mix sample data with real books).
+    setFiles((prev) => {
+      const base = mode === "demo" ? [] : prev;
+      return [...base.filter((p) => !loaded.some((l) => l.name === p.name)), ...loaded];
+    });
+    setMode("user");
     setResults(null);
-  }, []);
+  }, [mode]);
 
   const loadDemo = useCallback(() => {
     setFiles([
@@ -80,6 +91,7 @@ export default function App() {
       { name: "trial-balance-2025.csv", text: DEMO_TB_CSV, kind: "tb" },
     ]);
     setCompany(DEMO_COMPANY);
+    setMode("demo");
     setResults(null);
   }, []);
 
@@ -95,7 +107,21 @@ export default function App() {
       try {
         const iifs: IifResult[] = files.filter((f) => f.kind === "iif").map((f) => parseIif(f.text, f.name));
         const txnFiles = files.filter((f) => f.kind === "txn");
-        const txnRes: TxnReportResult = parseTxnReport(txnFiles.map((f) => f.text).join("\n"), txnFiles.map((f) => f.name).join(", "));
+        // Parse each transaction file independently — each may carry its own
+        // title rows and column layout (e.g. date-range chunks of a big export).
+        // Concatenating first would parse them all under the first file's header.
+        const perFile = txnFiles.map((f) => parseTxnReport(f.text, f.name));
+        const allTxns = perFile.flatMap((r) => r.transactions);
+        const mergedRange = allTxns.reduce<{ min: string; max: string } | null>((acc, t) => {
+          if (!acc) return { min: t.date, max: t.date };
+          return { min: t.date < acc.min ? t.date : acc.min, max: t.date > acc.max ? t.date : acc.max };
+        }, null);
+        const txnRes: TxnReportResult = {
+          transactions: allTxns,
+          warnings: perFile.flatMap((r) => r.warnings),
+          skippedRows: perFile.reduce((s, r) => s + r.skippedRows, 0),
+          dateRange: mergedRange,
+        };
         const ledger = buildLedger(iifs, txnRes.transactions);
         const tbFile = files.find((f) => f.kind === "tb");
         let recon: ReconReport | null = null;
@@ -107,13 +133,12 @@ export default function App() {
           const rangeStart = `${asOf.slice(0, 4)}-01-01`;
           recon = reconcile(ledger, tb.report, { rangeStart, asOf });
         }
-        const isDemo = files.some((f) => f.text === DEMO_TXN_CSV);
-        setResults({ ledger, recon, warnings, txnRes, isDemo });
+        setResults({ ledger, recon, warnings, txnRes, isDemo: mode === "demo" });
       } finally {
         setBusy(false);
       }
     }, 30);
-  }, [files]);
+  }, [files, mode]);
 
   const applyLicense = useCallback(async () => {
     setLicenseErr(null);

@@ -37,14 +37,20 @@ export function normalizeDate(raw: string): string | null {
   if (m) {
     let [, mo, d, y] = m;
     if (y.length === 2) y = Number(y) > 40 ? `19${y}` : `20${y}`;
-    const mm = mo.padStart(2, "0");
-    const dd = d.padStart(2, "0");
-    if (Number(mm) < 1 || Number(mm) > 12 || Number(dd) < 1 || Number(dd) > 31) return null;
-    return `${y}-${mm}-${dd}`;
+    return validOrNull(Number(y), Number(mo), Number(d));
   }
   m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (m) return s;
+  if (m) return validOrNull(Number(m[1]), Number(m[2]), Number(m[3]));
   return null;
+}
+
+/** Reject calendar-impossible dates (e.g. 02/30/2024, 13/01/2024) rather than
+ *  emitting them — a bogus date is a corrupt transaction, not a parseable one. */
+function validOrNull(y: number, mo: number, d: number): string | null {
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+  const dt = new Date(Date.UTC(y, mo - 1, d));
+  if (dt.getUTCFullYear() !== y || dt.getUTCMonth() !== mo - 1 || dt.getUTCDate() !== d) return null;
+  return `${String(y).padStart(4, "0")}-${String(mo).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
 
 const TOTAL_ROW = /^\s*(total|subtotal|grand total)/i;

@@ -20,6 +20,16 @@ const nav = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Browser-enforced egress lockdown: every request class is limited to
+            this origin (or blocked outright). A static export can't send HTTP
+            headers, so the policy ships as a meta tag — the practical effect
+            is the same: financial data physically cannot be sent anywhere. */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+        />
+      </head>
       <body>
         <header className="border-b border-rule bg-cream/80 sticky top-0 z-40 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">

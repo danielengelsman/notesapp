@@ -13,7 +13,20 @@ export interface ExportFile {
   content: string;
 }
 
-const q = (s: string) => (/[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s);
+/** True for a plain numeric literal (incl. signed/decimal) — safe to leave as
+ *  data even though it starts with + or -. Negative amounts are essential to
+ *  the export, so we must not quote-prefix them. */
+const isNumber = (s: string) => /^[+-]?\d+(\.\d+)?$/.test(s);
+
+/** Neutralize spreadsheet formula injection: a non-numeric cell whose text
+ *  begins with = + - @ (or a leading tab/CR) is executed as a formula by
+ *  Excel/Sheets/LibreOffice on open. Prefix a single quote so it's shown
+ *  literally. Then apply normal CSV quoting. Applied to every emitted cell. */
+const q = (raw: string) => {
+  let s = raw ?? "";
+  if (/^[=+\-@\t\r]/.test(s) && !isNumber(s)) s = "'" + s;
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+};
 const money = (cents: number) => {
   const sign = cents < 0 ? "-" : "";
   const abs = Math.abs(cents);
@@ -107,7 +120,13 @@ match the reconciliation report Bookstead showed you.
 }
 
 export function exportManager(ledger: Ledger): ExportFile[] {
-  const tsv = (rows: string[][]) => rows.map((r) => r.join("\t")).join("\r\n") + "\r\n";
+  // TSV cells: strip tabs/newlines and neutralize leading formula characters.
+  const tc = (raw: string) => {
+    let s = (raw ?? "").replace(/[\t\r\n]/g, " ");
+    if (/^[=+\-@]/.test(s) && !isNumber(s)) s = "'" + s;
+    return s;
+  };
+  const tsv = (rows: string[][]) => rows.map((r) => r.map(tc).join("\t")).join("\r\n") + "\r\n";
 
   const coa = tsv([
     ["Name", "Code"],

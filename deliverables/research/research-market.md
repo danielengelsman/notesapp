@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Market Facts Research (QuickBooks Desktop)
 Research date: 2026-07-11. Researcher note on method: the sandbox egress proxy policy-denied direct page fetches (403 CONNECT) to nearly all non-search hosts, so every fact below was collected from web-search result content attributed to the cited URL, not from a full page read. Facts I consider well-corroborated (multiple independent results) are stated plainly; anything seen only once, or with conflicting versions, is flagged UNVERIFIED or CONFLICTING. Verify flagged items before using them in public marketing copy.
 

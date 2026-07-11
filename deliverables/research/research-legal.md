@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Legal & Positioning Risk Research
 Date: 2026-07-11. Scope: naming "QuickBooks" in marketing of a client-side IIF/CSV conversion tool. **This is research, not legal advice.**
 

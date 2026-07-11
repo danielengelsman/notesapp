@@ -22,7 +22,7 @@ export default function HowItWorks() {
           },
           {
             t: "B · Every transaction (one CSV)",
-            d: <>Run <em>Reports → Custom Reports → Transaction Detail</em>. Set <strong>Dates: All</strong>. In <em>Customize Report → Display</em>, make sure these columns are on: <strong>Trans #, Type, Date, Num, Name, Memo, Account, Debit, Credit</strong>. Remove any filters (Accounts: All). Then <em>Excel → Create New Worksheet → Create a comma separated values (.csv) file</em>.</>,
+            d: <>Run <em>Reports → Custom Reports → Transaction Detail</em>. Set <strong>Dates: All</strong>. In <em>Customize Report → Display</em>, make sure these columns are on: <strong>Trans #, Type, Date, Num, Name, Memo, Account, Debit, Credit</strong>. Remove any filters (Accounts: All). Then <em>Excel → Create New Worksheet → Create a comma separated values (.csv) file</em>. <strong>Big file?</strong> QuickBooks caps CSV report exports around 32,000 rows — if yours is bigger, run the same report in date-range chunks (e.g., two years at a time) and drop <em>all</em> the chunk files into Bookstead together; it merges them and the trial-balance check still has to come out green.</>,
           },
           {
             t: "C · The referee (one CSV)",
@@ -40,9 +40,12 @@ export default function HowItWorks() {
         ))}
       </div>
       <p className="mt-4 rounded-lg bg-paper p-4 text-sm text-slate2">
-        <strong>Subscription already lapsed?</strong> QuickBooks Desktop&apos;s view-only mode
-        (the first 12 months after non-renewal) can still run reports and exports.
-        If you&apos;re in that window, do this now — after it closes, the file won&apos;t open at all.
+        <strong>Subscription already lapsed?</strong> Intuit confirms view-only mode (the 12
+        months after non-renewal) can still run reports and export them to Excel/CSV — as an
+        admin user in single-user mode, on 2023-or-newer products. The IIF <em>list</em> export
+        is not documented for view-only mode; if it&apos;s unavailable to you, Bookstead runs from
+        the reports alone — account types get inferred and clearly flagged, and the trial-balance
+        check still has to come out green. Either way: do this now, while the file still opens.
       </p>
 
       <h2 className="mt-10 text-2xl font-bold">Step 2 — Drop the files into Bookstead</h2>
@@ -82,9 +85,10 @@ export default function HowItWorks() {
 
       <h2 className="mt-10 text-2xl font-bold">What v1 deliberately doesn&apos;t do</h2>
       <p className="mt-3 text-slate2">
-        QuickBooks&apos; exports don&apos;t contain the audit trail, attachments, payroll item
-        detail, or memorized reports — so no converter can carry them, and we won&apos;t
-        pretend otherwise. v1 is fenced to US editions and single currency; files with
+        No converter — ours included — carries the audit trail, attachments, payroll item
+        detail, or memorized reports into a new ledger. If you want them preserved, export
+        the Audit Trail report to CSV and copy the QuickBooks Attach folder next to your
+        archive; they remain ordinary files. v1 is fenced to US editions and single currency; files with
         multi-currency or inventory assemblies get flagged clearly instead of quietly
         mangled. Your accountant will find the converted ledger boring. That&apos;s the point.
       </p>

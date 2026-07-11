@@ -9,7 +9,7 @@ export default function Home() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <p className="mb-4 inline-block rounded-full bg-ledgerred-bg px-3 py-1 text-[13px] font-semibold text-ledgerred">
-              QuickBooks® Desktop Pro Plus renewal 2026: $1,049/yr — up from $349.99 in 2021
+              QuickBooks® Desktop Pro Plus renewal, Feb 2026: $1,149/yr — up from $349.99 in 2021
             </p>
             <h1 className="text-[42px] font-bold md:text-[54px]">
               Your books, <span className="text-stead">yours again.</span>
@@ -88,9 +88,9 @@ export default function Home() {
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {[
               {
-                n: "3×",
+                n: "3.3×",
                 t: "price in four years",
-                d: "QuickBooks® Desktop Pro Plus went from $349.99/yr (2021) to $1,049/yr plus $310 per extra seat (2025). Every fall, the renewal letter lands.",
+                d: "QuickBooks® Desktop Pro Plus went from $349.99/yr (2021) to $999 (2024), $1,049 (2025), and $1,149/yr effective February 2026. Every renewal cycle, the letter lands.",
               },
               {
                 n: "12 mo",
@@ -148,7 +148,7 @@ export default function Home() {
         <div className="rounded-2xl border-2 border-copper/40 bg-cream p-7">
           <h2 className="text-2xl font-bold">What Bookstead won&apos;t do (told to you straight)</h2>
           <div className="mt-4 grid gap-x-10 gap-y-2 text-[15px] text-slate2 md:grid-cols-2">
-            <p>• It converts what QuickBooks exports: the general ledger, lists, and balances. The audit trail, document attachments, payroll item detail, and memorized reports are not in QuickBooks&apos; exports — so they can&apos;t be in anyone&apos;s conversion, including ours.</p>
+            <p>• It converts what QuickBooks exports: the general ledger, lists, and balances. The audit trail, document attachments, payroll item detail, and memorized reports don&apos;t carry into any new ledger — ours or anyone&apos;s. (You can still keep them: export the Audit Trail report and copy your Attach folder alongside your archive; we show you how.)</p>
             <p>• v1 is fenced to US editions, single currency. Multi-currency, inventory assemblies, and non-US tax structures are flagged, not silently mangled.</p>
             <p>• You still need a working QuickBooks install (even an expired-to-view-only one that can still run reports) to produce the exports. We can&apos;t read the raw .QBW file — it&apos;s an encrypted database, and any tool claiming to open it in a browser is guessing.</p>
             <p>• If your books don&apos;t reconcile, Bookstead shows exactly which accounts disagree and by how much — and you pay nothing until it&apos;s green.</p>
@@ -162,7 +162,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold">Priced like a tool, not a toll</h2>
           <p className="mx-auto mt-3 max-w-xl text-slate2">
             The verification is free. Unlocking your archive and migration packs is a
-            one-time purchase per company file — against the $1,049 renewal it replaces.
+            one-time purchase per company file — against the $1,149 renewal it replaces.
           </p>
           <div className="mt-8 flex flex-wrap items-stretch justify-center gap-5">
             <div className="w-72 rounded-2xl border border-rule bg-paper p-6 text-left">

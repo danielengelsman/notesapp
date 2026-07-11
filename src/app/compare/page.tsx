@@ -4,14 +4,14 @@ export const metadata = { title: "Compare your escape routes — Bookstead" };
 
 const rows: [string, string, string, string, string, string][] = [
   // [dimension, Bookstead, Dataswitcher, ConversionService, KeepOldPC, DIY]
-  ["Price", "$149 once per company file (launch $99)", "Free (funded by QBO/Wave to acquire you)", "$275–$449+ per file", "“Free” until the hardware or activation dies", "Free"],
+  ["Price", "$149 once per company file (launch $99)", "Free (funded by Intuit to move you to QuickBooks Online)", "$275–$449+ per file", "“Free” until the hardware or activation dies", "Free"],
   ["Your data goes…", "Nowhere. Parses in your browser; provably offline", "Uploaded to their servers", "Emailed/uploaded to a stranger's team", "Stays local", "Stays local"],
   ["History carried", "Everything in your exports — every year, every line", "Typically ~2 years; older activity summarized", "Full history on bigger packages", "Everything, until it doesn't open", "Whatever you retype"],
   ["Destination", "GnuCash, Manager.io, CSV/JSON — your choice, or none", "Their owner's product only", "The services' supported list", "None — you're stuck where you are", "Any, painfully"],
   ["Proof it's complete", "Trial-balance diff, account by account, before you pay", "Spot-check it yourself after", "“Trust us” + your spot-checks", "n/a", "Your own spreadsheet math"],
   ["Permanent archive", "One self-contained HTML file, readable forever", "No — the point is moving you into their app", "No", "Until Windows/activation breaks", "No"],
   ["Time", "~10 minutes, self-serve", "2–4 business days typical", "Days to weeks", "Ongoing life-support", "Days of retyping"],
-  ["Works after your QBD sub lapsed", "Yes — view-only mode can still export (within its 12-month window)", "Needs a working install/file", "Usually yes (they use their own licenses)", "That's the plan, until reactivation fails", "Needs a working install"],
+  ["Works after your QBD sub lapsed", "Yes — view-only mode still runs report exports (12-month window; lists export unconfirmed — we run without it)", "Needs a working install/file", "Usually yes (they use their own licenses)", "That's the plan, until reactivation fails", "Needs a working install"],
 ];
 
 export default function Compare() {
@@ -30,7 +30,7 @@ export default function Compare() {
             <tr className="text-left">
               <th className="p-3"></th>
               <th className="bg-verified-bg p-3 font-bold text-stead">Bookstead</th>
-              <th className="p-3 font-semibold">Dataswitcher<br /><span className="font-normal text-slate2">(inside QBO/Wave onboarding)</span></th>
+              <th className="p-3 font-semibold">Dataswitcher<br /><span className="font-normal text-slate2">(inside QuickBooks Online onboarding)</span></th>
               <th className="p-3 font-semibold">Conversion services<br /><span className="font-normal text-slate2">(E-Tech &amp; co.)</span></th>
               <th className="p-3 font-semibold">Keep an old PC running QBD</th>
               <th className="p-3 font-semibold">DIY spreadsheets</th>
@@ -55,9 +55,9 @@ export default function Compare() {
         <div className="rounded-xl border border-rule bg-cream p-5">
           <h2 className="font-bold">When Dataswitcher is the right call</h2>
           <p className="mt-2 text-[15px] text-slate2">
-            If you&apos;ve already decided on QuickBooks Online or Wave, and two years of
+            If you&apos;ve already decided on QuickBooks Online, and two years of
             detail plus summarized history is enough for you, their free conversion is
-            legitimate — Intuit and Wave pay for it because they want your subscription.
+            legitimate — Intuit pays for it because it wants your subscription.
             Bookstead is for everyone who wants <em>all</em> the history, a destination
             they choose (including free ones), an archive that outlives any vendor —
             or simply doesn&apos;t want their books uploaded anywhere.

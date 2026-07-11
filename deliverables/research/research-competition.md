@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Competitive Teardown (QBD evacuation / archive / conversion market)
 
 Research date: 2026-07-11. Method: live web search + GitHub API. NOTE: the sandbox egress proxy blocked direct page fetches to most competitor domains (HTTP 403 CONNECT denial), so several facts are sourced from search-result snippets of the named pages rather than full page fetches. Anything not directly confirmed is marked UNVERIFIED.

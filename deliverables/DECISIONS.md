@@ -55,5 +55,45 @@ Naming research killed "Ledgerlift": an active Boston-area bookkeeping firm (Led
 - **Pricing:** verified MoR fees 5%+$0.50 (both Paddle and Lemon Squeezy); contribution ≈ $113/sale at $149; 12-mo scenarios: $10.6k / $63k / $212k. Adopted recommendations: keep $149, time-box the $99 launch, raise bookkeeper pack to **$599/10 files**.
 - **Engine milestone:** core built and tested — 19/19 tests, penny-perfect reconciliation on a 1,369-transaction six-year fixture company, with an independent referee computation and a sabotage test proving the safety net catches filtered exports.
 
+## D-011 · Product architecture choices (Phase 5)
+- **Static export, no server anywhere**: `next.config.ts output:'export'`. The privacy claim is enforced by architecture; also makes the package runnable by a stranger with `npx serve out`.
+- **Reconciliation is the product**: parsers never fail hard — they warn; the trial-balance diff is the safety net. Sabotage test (account-filtered export) proves the net catches real-world mistakes.
+- **Archive = one self-contained HTML** with embedded JSON + vanilla-JS viewer (no sql.js: a wasm dependency inside a "readable in 2040" artifact undermines the promise; plain JS + JSON keeps the escape hatch of raw readability).
+- **Licensing**: Ed25519-signed keys verified via SubtleCrypto in-browser — no phone-home, consistent with the premise. Signing key deliberately committed (this repo IS the demo; production note in the script). Demo company ships with downloads unlocked; real files gated.
+- **Demo data bundled as a module** (not fetched) so the in-app demo makes zero requests.
+
+## D-012 · Video production (Phase 6)
+Two films, fully local: launch (72s, 6 scenes) and founder (78s, 5 scenes). Motion scenes are brand-styled HTML/CSS recorded via Playwright; product scenes are REAL footage of the working app and archive (labeled as such on screen). Voiceover: the piper neural voice (see D-005) — a synthetic voice for an AI founder is honesty, not budget. Assembled with ffmpeg (h264/aac, hard cuts). Every frame QA'd via extracted stills.
+
+## D-013 · Phase 7 red team — findings and responses
+Four adversarial agents (fact-checker, QA attacker, business red-teamer, completeness critic) ran against the finished company. Material findings and what I did:
+- **CSP claimed but not implemented** (completeness critic): the plan cited `connect-src 'none'` that didn't exist in code. FIXED: real CSP meta now ships on every page (`default-src 'self'`, `connect-src 'self'`, `object-src 'none'`, …), verified working under Playwright; claims reworded to match exactly. Lesson logged: a claims-vs-code auditor belongs in every future run.
+- **QBD export row caps** (red team): CSV report exports cap ≈32k rows — "one CSV" was false for the biggest customers. FIXED: chunked multi-file ingestion verified working (it merges and still must reconcile green); how-it-works copy now teaches date-range chunking.
+- **No legal person can sign the merchant agreement** (red team): inherently true — an AI can't pass KYC. LOGGED as the #1 handoff item in the recap: the human taking this to market must put an LLC on the Paddle/Lemon Squeezy account. Not fixable from inside the sandbox; stated, not hidden.
+- **Refund wording** (red team): "no-questions 30 days" on an irrevocable digital good is an open register. FIXED: reworded to a conversion-quality promise.
+- **Demand shape** (red team): base case is bookkeeper-led, not owner-viral; conservative scenario (~$10.6k) is the honest expectation, upside requires the bookkeeper channel compounding. ACCEPTED into the plan framing.
+- **AI-founder disclosure on the buying path** (red team wanted it moved off): PARTIALLY REJECTED — kept on landing + security page. Rationale: the first distribution beachhead (Show HN, r/Bookkeeping trust-first post) rewards radical transparency; hiding it there is both off-brand and discoverable. Dissent recorded here.
+- Verdict adopted: **SHIP-WITH-CHANGES, changes applied** (fact-check fixes follow in D-014).
+
+## D-014 · Fact-check fixes (Phase 7)
+The adversarial fact-checker checked 30 public claims (13 verified, 8 overstated, 4 wrong, 5 unverifiable). Fixes applied:
+- **Flagship price was stale**: site + both videos said $1,049/yr; Intuit raised Pro Plus to **$1,149/yr effective Feb 1, 2026** — and my own research files already had the right number. FIXED everywhere including re-recording video scenes L1/L2/F3 and their voiceover (L2 now shows the full 5-bar 2021→2026 ramp). This is exactly the kind of miss the "cite everything" discipline exists to catch; logged as a process lesson.
+- **"Audit trail etc. not in QuickBooks' exports"** was refutable (the Audit Trail *is* an exportable report). Reworded on 4 pages to the true claim: they don't carry into a *new ledger*, and we tell users how to keep them (export the report, copy the Attach folder).
+- **View-only export claim** softened to exactly what Intuit documents (report exports yes; IIF list export unconfirmed — the app runs from reports alone if lists are unavailable).
+- **Wave/Dataswitcher** framing corrected (Wave no longer carries QB history; Dataswitcher is QuickBooks-Online-onboarding).
+- Bookkeeper-pack ROI line fixed to the verified $275–$449 service-price anchor.
+
+## D-015 · QA-attack fixes (Phase 7)
+The hostile QA engineer found 1 P0, 4 P1, 4 P2 (and confirmed the archive is injection-safe, crypto is sound, and 70k-txn files parse in <1s). Fixed and regression-tested (new `src/engine/security.test.ts`, suite now 35/35):
+- **P0 — CSV/TSV formula injection** in every export pack: cells beginning `= + - @` executed on open in Excel/Sheets. FIXED: quote-prefix such cells (exempting genuine numbers, since the GnuCash Amount column needs `-100.00`). 
+- **P1 — demo data merged into a real company's output** + **P1 — license unlock bypass via `isDemo`**: both stemmed from inferring demo-mode from file *content*. FIXED: explicit `"empty"|"demo"|"user"` mode; adding your files discards demo files; downloads unlock only in genuine demo mode. Verified in-browser (real archive contains only the real company, gate holds).
+- **P1 — multiple transaction files parsed under the first file's column map**: FIXED — each file parsed independently then merged (this also makes the chunked-export workaround from D-013 actually correct).
+- **P1 — reconciliation false-mismatch on space-separated account numbers** ("1000 Checking" vs "Checking"): FIXED in `normalizeAccountLabel`.
+- **P2 — calendar-impossible dates** (02/30/2024) accepted: FIXED — real-date validation, leap-year aware.
+Remaining P2s (adjacency grouping of same-Type/Date/Num txns without a Trans #; 3-decimal per-line rounding) are documented in qa-attack.md as known v1 limitations — both are caught by the reconciliation diff, which is the design's whole point.
+
+## D-016 · Net verdict after the kill attempt
+The business SURVIVED with changes, not unscathed. The honest scorecard now lives in `deliverables/research/red-team.md`, `fact-check.md`, `qa-attack.md`, and `completeness-audit.md` — shipped in the package rather than buried. The single thing I could not fix from inside the sandbox: **a legal person must front the merchant-of-record account** (an AI can't pass KYC). That's the #1 handoff item, stated plainly in the recap. Everything else the panel raised was either fixed or consciously accepted with reasoning recorded.
+
 ---
 (log continues as phases complete)

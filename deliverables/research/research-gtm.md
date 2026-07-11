@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Go-To-Market Research, First 30 Days (compiled 2026-07-11)
 
 METHOD NOTE (read first): This research environment's proxy **blocked direct fetching** of reddit.com/old.reddit.com, forum.manager.io, news.ycombinator.com, quickbooks.intuit.com, gnucash.org, facebook.com and most other hosts (403 at CONNECT). All verification below therefore comes from **web-search result snippets and summaries of those exact URLs** — every URL listed was returned live in search results in July 2026, but page-level details (exact subscriber counts, sidebar rule text, HN point totals) could not be read on-page and are flagged UNVERIFIED where applicable.

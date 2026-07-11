@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Pricing & Unit Economics Stress Test
 Research date: 2026-07-11. All figures carry inline sources; unverified items are marked UNVERIFIED.
 

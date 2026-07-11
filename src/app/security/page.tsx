@@ -23,8 +23,11 @@ export default function Security() {
         </li>
         <li>
           <strong className="text-ink">Zero third-party requests.</strong> No analytics, no fonts from a CDN,
-          no tag managers, no error trackers. The only network activity is your browser
-          fetching Bookstead&apos;s own page files from Bookstead&apos;s own host.
+          no tag managers, no error trackers. A Content-Security-Policy shipped with every
+          page instructs your browser to refuse any connection beyond same-origin page
+          files — view the page source and read the policy yourself. The only network
+          activity is your browser fetching Bookstead&apos;s own page files from
+          Bookstead&apos;s own host.
         </li>
         <li>
           <strong className="text-ink">Your files stay as files.</strong> Dropped files are read with the
@@ -59,8 +62,8 @@ export default function Security() {
         export matches the trial balance QuickBooks exported, account by account, in
         integer cents — arithmetic in whole cents, never floating point. When it
         doesn&apos;t match, we show the exact accounts and deltas and you pay nothing.
-        The reconciliation covers the general ledger; it cannot vouch for data
-        QuickBooks doesn&apos;t export (audit trail, attachments, payroll item detail) —{" "}
+        The reconciliation covers the general ledger; it cannot vouch for what lives outside the ledger&apos;s postings (audit-trail edit
+        history, attachments, payroll item detail) —{" "}
         <Link href="/how-it-works/" className="text-stead underline">we list those exclusions openly</Link>.
       </p>
 

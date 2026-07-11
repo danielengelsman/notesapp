@@ -1,3 +1,5 @@
+> **Historical note:** this dossier was researched under the working name "Ledgerlift", later renamed **Bookstead** (see DECISIONS.md D-009). Facts verified as of July 11, 2026; the build sandbox blocks live re-fetching, so verify time-sensitive figures before external use.
+
 # Ledgerlift — Technical Format Spec (Research)
 
 Date: 2026-07-11. Scope: implementable format details for a 100% client-side web app that parses QuickBooks Desktop (QBD) exports, rebuilds a double-entry ledger, verifies it, and re-exports to Manager.io / GnuCash / a self-contained HTML archive.

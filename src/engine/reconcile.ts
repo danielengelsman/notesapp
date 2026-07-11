@@ -42,7 +42,10 @@ export interface ReconReport {
  *  middot separators, and indentation used for sub-accounts. */
 export function normalizeAccountLabel(label: string): string {
   return label
-    .replace(/^\s*\d{3,6}(\.\d+)?\s*[·•\-:]\s*/, "")
+    // strip a leading account number whether followed by a separator
+    // ("1000 · Checking", "1000: Checking", "1000 - Checking") or just a
+    // space ("1000 Checking") — QuickBooks emits all of these.
+    .replace(/^\s*\d{3,6}(\.\d+)?\s*(?:[·•\-:]\s*|\s+)/, "")
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase();

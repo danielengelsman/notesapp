@@ -34,7 +34,7 @@ export default function Pricing() {
             <li>✓ The Bookstead Archive — one self-contained file, yours forever</li>
             <li>✓ Migration packs: GnuCash, Manager.io, generic CSV/JSON</li>
             <li>✓ Format updates free for 12 months (it keeps working after — updates, not access)</li>
-            <li>✓ No-questions refund, 30 days</li>
+            <li>✓ 30-day refund promise: anything wrong with your conversion, money back</li>
           </ul>
           <Link href="/app/" className="mt-5 block rounded-lg bg-stead py-3 text-center font-semibold text-white hover:bg-pine">
             Start with the free check
@@ -52,7 +52,7 @@ export default function Pricing() {
           </ul>
           <p className="mt-4 text-sm text-slate2">
             If you keep books for stranded QuickBooks Desktop clients, you are the
-            reason this product exists. One conversion service invoice pays for the pack.
+            reason this product exists. At service-bureau prices ($275–$449 per file), the pack pays for itself by the second client.
           </p>
         </div>
       </div>
@@ -62,8 +62,8 @@ export default function Pricing() {
           <h2 className="font-bold">Why you can trust the price with your books</h2>
           <p className="mt-2 text-[15px] text-slate2">
             You see the complete verification <em>before</em> paying: which accounts match,
-            which don&apos;t, to the penny. If it isn&apos;t green, you don&apos;t pay. If it&apos;s green
-            and you&apos;re still unhappy, the refund is no-questions for 30 days. Checkout and
+            which don&apos;t, to the penny. If it isn&apos;t green, you don&apos;t pay. If it&apos;s green and the delivered archive or exports don&apos;t live up to it,
+            30-day refund, no argument. Checkout and
             refunds are handled by a merchant-of-record (your card details never touch us
             either). The license unlock is verified locally — even paying doesn&apos;t send
             your data anywhere.
@@ -74,7 +74,7 @@ export default function Pricing() {
           <table className="tabular mt-3 w-full text-[15px]">
             <tbody>
               {[
-                ["QuickBooks® Desktop Pro Plus renewal (2026)", "$1,049 / every year"],
+                ["QuickBooks® Desktop Pro Plus renewal (Feb 2026)", "$1,149 / every year"],
                 ["Conversion service, per file", "$275–$449, plus your books in their inbox"],
                 ["Bookstead Evacuate", "$149 once ($99 at launch)"],
               ].map(([a, b], i) => (
@@ -89,7 +89,7 @@ export default function Pricing() {
         <div className="rounded-xl border border-rule bg-cream p-6">
           <h2 className="font-bold">Honest small print, in regular-size type</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] text-slate2">
-            <li>Converts what QuickBooks exports (general ledger, lists, balances). Audit trail, attachments, payroll item detail, and memorized reports aren&apos;t in QuickBooks&apos; exports — no converter can carry them.</li>
+            <li>Converts what QuickBooks exports (general ledger, lists, balances). Audit trail, attachments, payroll item detail, and memorized reports don&apos;t carry into a new ledger with any converter — keep them by exporting the Audit Trail report and copying your Attach folder alongside the archive.</li>
             <li>v1 supports US editions, single currency. Multi-currency and inventory-assembly files get flagged, not mangled.</li>
             <li>You need a QuickBooks install that can still run exports — an active sub, a perpetual license, or view-only mode within 12 months of lapse.</li>
             <li>One license = one company file, on the honor system backed by arithmetic: the license is checked locally and never phones home, because that would betray the entire premise.</li>
